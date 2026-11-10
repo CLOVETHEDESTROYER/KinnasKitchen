@@ -1,0 +1,286 @@
+{
+  "images": [
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/11062b_b4652d614c9a4674b0d88d585422a182~mv2.jpeg",
+      "localFile": "chili-peppers.jpg",
+      "role": "hero",
+      "alt": "Chili Peppers",
+      "pages": [
+        "home"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 2434,
+      "height": 2880,
+      "format": "JPEG",
+      "bytes": 8132234
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/11062b_55e4be1e75564866b6c28290f9a9d271~mv2.png",
+      "localFile": "social-11062b_55e4be1e75564866b6c28290f9a9d271~mv2.png",
+      "role": "social-icon",
+      "alt": "Instagram",
+      "pages": [
+        "home",
+        "about-3",
+        "contact-8",
+        "recipes",
+        "shop",
+        "product-page/kinna-s-laos-chile-paste-1",
+        "product-page/kinnas-vegan-tamirand-chile-sauce",
+        "product-page/kinnas-vegan-mango-salsa",
+        "product-page/kinnas-vegan-laos-chile-paste"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 201,
+      "height": 201,
+      "format": "PNG",
+      "bytes": 14375
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/11062b_2381e8a6e7444f4f902e7b649aa3f0ac~mv2.png",
+      "localFile": "social-11062b_2381e8a6e7444f4f902e7b649aa3f0ac~mv2.png",
+      "role": "social-icon",
+      "alt": "Facebook",
+      "pages": [
+        "home",
+        "about-3",
+        "contact-8",
+        "recipes",
+        "shop",
+        "product-page/kinna-s-laos-chile-paste-1",
+        "product-page/kinnas-vegan-tamirand-chile-sauce",
+        "product-page/kinnas-vegan-mango-salsa",
+        "product-page/kinnas-vegan-laos-chile-paste"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 201,
+      "height": 201,
+      "format": "PNG",
+      "bytes": 3101
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/01ab6619093f45388d66736ec22e5885.png",
+      "localFile": "social-01ab6619093f45388d66736ec22e5885.png",
+      "role": "social-icon",
+      "alt": "Twitter",
+      "pages": [
+        "home",
+        "about-3",
+        "contact-8",
+        "recipes",
+        "shop",
+        "product-page/kinna-s-laos-chile-paste-1",
+        "product-page/kinnas-vegan-tamirand-chile-sauce",
+        "product-page/kinnas-vegan-mango-salsa",
+        "product-page/kinnas-vegan-laos-chile-paste"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 200,
+      "height": 200,
+      "format": "PNG",
+      "bytes": 2367
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/7528824071724d12a3e6c31eee0b40d4.png",
+      "localFile": "social-7528824071724d12a3e6c31eee0b40d4.png",
+      "role": "social-icon",
+      "alt": "LinkedIn",
+      "pages": [
+        "home",
+        "about-3",
+        "contact-8",
+        "recipes",
+        "shop",
+        "product-page/kinna-s-laos-chile-paste-1",
+        "product-page/kinnas-vegan-tamirand-chile-sauce",
+        "product-page/kinnas-vegan-mango-salsa",
+        "product-page/kinnas-vegan-laos-chile-paste"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 200,
+      "height": 200,
+      "format": "PNG",
+      "bytes": 1298
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/11062b_ce3458f81a3e496b8440378bc649802c~mv2.jpg",
+      "localFile": "food-spread-about-1.jpg",
+      "role": "about",
+      "alt": "Mexican Food Spread",
+      "pages": [
+        "about-3"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 5000,
+      "height": 1991,
+      "format": "JPEG",
+      "bytes": 10879873
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/92de064a1a20433aa60760007a23dd6b.jpg",
+      "localFile": "food-spread-about-2.jpg",
+      "role": "about",
+      "alt": "Mexican Food Spread",
+      "pages": [
+        "about-3"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 2368,
+      "height": 2368,
+      "format": "JPEG",
+      "bytes": 3934491
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png",
+      "localFile": "social-0fdef751204647a3bbd7eaa2827ed4f9.png",
+      "role": "social-icon",
+      "alt": "Facebook",
+      "pages": [
+        "contact-8"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 200,
+      "height": 200,
+      "format": "PNG",
+      "bytes": 833
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/c7d035ba85f6486680c2facedecdcf4d.png",
+      "localFile": "social-c7d035ba85f6486680c2facedecdcf4d.png",
+      "role": "social-icon",
+      "alt": "Twitter",
+      "pages": [
+        "contact-8"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 200,
+      "height": 200,
+      "format": "PNG",
+      "bytes": 1900
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/6ea5b4a88f0b4f91945b40499aa0af00.png",
+      "localFile": "social-6ea5b4a88f0b4f91945b40499aa0af00.png",
+      "role": "social-icon",
+      "alt": "LinkedIn",
+      "pages": [
+        "contact-8"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 200,
+      "height": 200,
+      "format": "PNG",
+      "bytes": 1213
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png",
+      "localFile": "social-01c3aff52f2a4dffa526d7a9843d46ea.png",
+      "role": "social-icon",
+      "alt": "Instagram",
+      "pages": [
+        "contact-8"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": true,
+      "width": 200,
+      "height": 200,
+      "format": "PNG",
+      "bytes": 21665
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/8f560b_a4a59fee6eae4bd0860384ed6c026a5c~mv2.jpg",
+      "localFile": "recipe-photo.jpg",
+      "role": "recipes",
+      "alt": "",
+      "pages": [
+        "recipes"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 1500,
+      "height": 3000,
+      "format": "JPEG",
+      "bytes": 3398876
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/8f560b_e74f94cb8299442cb0d92f307627551a~mv2.jpg",
+      "localFile": "laos-chile-paste.jpg",
+      "role": "product",
+      "alt": "Kinna's Laos Chile Paste 6 oz",
+      "pages": [
+        "shop",
+        "product-page/kinna-s-laos-chile-paste-1"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 695,
+      "height": 695,
+      "format": "JPEG",
+      "bytes": 50581
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/8f560b_0d45022c368f40f8838678d09e5ea2d3~mv2.jpg",
+      "localFile": "vegan-tamarind-chile-sauce.jpg",
+      "role": "product",
+      "alt": "Kinnas Vegan Tamirand Chile Sauce 12oz",
+      "pages": [
+        "shop",
+        "product-page/kinnas-vegan-tamirand-chile-sauce"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 859,
+      "height": 818,
+      "format": "JPEG",
+      "bytes": 40974
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/8f560b_90017ea56b964ce18a11507d923b6181~mv2.jpg",
+      "localFile": "vegan-mango-salsa.jpg",
+      "role": "product",
+      "alt": "Kinnas Vegan Mango Salsa 12oz",
+      "pages": [
+        "shop",
+        "product-page/kinnas-vegan-mango-salsa"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 831,
+      "height": 831,
+      "format": "JPEG",
+      "bytes": 67512
+    },
+    {
+      "sourceUrl": "https://static.wixstatic.com/media/8f560b_a092b99210384fefb4eec748be4ada4d~mv2.jpg",
+      "localFile": "vegan-chile-paste.jpg",
+      "role": "product",
+      "alt": "Kinna's Vegan Chile Paste 6 oz",
+      "pages": [
+        "shop",
+        "product-page/kinnas-vegan-laos-chile-paste"
+      ],
+      "includedForPreservation": true,
+      "isSiteChrome": false,
+      "width": 742,
+      "height": 742,
+      "format": "JPEG",
+      "bytes": 50484
+    }
+  ],
+  "notes": [
+    "All meaningful distinct images discovered in img tags across nine sampled pages preserved.",
+    "Social icons preserved as inventory but are platform chrome. Twitter and LinkedIn original links point to Wix, not client.",
+    "No standalone raster brand logo found; existing header wordmark is text.",
+    "About-page images have original alt text Mexican Food Spread; do not portray them as documentary photographs of this Lao family."
+  ]
+}
