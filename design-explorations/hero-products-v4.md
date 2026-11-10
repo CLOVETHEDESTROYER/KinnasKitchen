@@ -1,0 +1,11 @@
+# Warm, cohesive product hero
+
+Edited with the built-in Image Generation tool. Removed the basket chiles and matched foreground chile lighting and contact shadows to the warm scene. This is AI-composited concept imagery.
+
+Saved source: `design-explorations/hero-products-v4.png`
+
+Website delivery asset: `public/assets/hero-products-v4.webp`
+
+## Final prompt
+
+Use case: lighting-weather and precise-object-edit. Edit this existing product photograph into one exceptionally cohesive photorealistic artisan food still life. Two specific fixes: (1) REMOVE the two small red chiles attached vertically to the right-hand woven basket; reconstruct the unobstructed basket naturally, no chiles floating or attached there. (2) Relight the small red Lao/Thai chiles resting in the lower-left foreground so they truly share the SAME warm diffused window light as the jars, garlic, ginger and linen. Their current highlights are too bright and hard, saturation too strong, and they look pasted in. Reduce their specular brightness and saturation subtly; add realistic soft contact shadows beneath every chile and stem, slight warm reflected light from the linen, natural surface texture and believable depth. Keep slender pointed red chile shape, green stems and natural loose cluster, avoid a perfect arranged fan. Apply a restrained warm filmic photographic grade consistently over the whole image: creamy warm whites, golden soft highlights, natural rich reds, gentle brownish shadows, subtle film texture, no orange color cast or heavy sepia. One coherent light source from upper left, physically consistent shadows and reflections. Preserve the two real product jars EXACTLY as in target: same positions, dimensions, lids, label logos, printed Lao lettering, English text, purple and green/black colors, and label illustrations. Do not redraw or retype label artwork. Keep ginger and garlic, ceramic bowl of flakes, linen, cream textured background, leafy branches, basket position, upper negative space, portrait framing and composition. All ingredients should feel photographed together with the products in a real warm kitchen still life, no CGI, no overly sharp or oversaturated props, no additional objects or text. Only the basket-chile removal, foreground chile integration and coherent warm photographic lighting/color are changed.
