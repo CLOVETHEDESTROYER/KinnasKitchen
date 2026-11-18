@@ -1,43 +1,41 @@
-# Kinna’s Kitchen: commerce recommendation
+# Kinna’s Kitchen: commerce handover
 
-This is a private design and shopping-flow demo. It does not create orders, charge cards, calculate shipping/tax, or check live inventory. Bag data is stored only in the visitor’s browser. The checkout deliberately needs no personal or payment information.
+This is a private design and shopping-flow demo. It does not create orders, charge cards, calculate shipping/tax or check live inventory. Bag data is stored only in the visitor’s browser. Demo checkout needs no personal or payment information.
 
-## Recommended live solution: Shopify Basic with a native custom theme
+## Confirm the provider before choosing an integration
 
-Use this visual design as the specification for a Shopify Online Store theme. Keep product catalog, images, variants, inventory, orders, discounts, payments, shipping and fulfillment in Shopify. The owners should edit products in Shopify and page sections in the theme editor. Avoid a separate headless storefront for this four-product catalog unless there is a demonstrated need; a native theme reduces the number of systems and integrations the owners must maintain.
+The owners’ payment provider is **unconfirmed**. Ask whether they use Square, another provider, or different tools at markets and online. Also confirm how many website orders they receive, their current Wix bill, product/stock management, fulfillment needs and who will maintain the new site.
 
-The current Sites/React concept is not a drop-in Shopify theme. Production work includes translating its sections into Shopify Liquid and theme sections, wiring the actual product and variant records, replacing the demo bag with the platform’s cart, and using Shopify’s hosted checkout. No credentials or payment details are needed for reviewing this design.
+If Square is already used and fits their needs, evaluate the custom storefront with Square-hosted checkout. Simple purchase links can suit individual jars or fixed bundles. Keeping a multi-product bag needs a server-side connection for the correct catalog items, heat variants, quantities and trusted prices, with delivery/tax configuration and verified payment status. Test how market sales and online inventory interact; do not assume synchronization. A thank-you redirect alone is not proof of payment.
 
-For growers markets, evaluate Shopify POS against their actual market workflow and hardware. Confirm staff access and subscription needs before choosing a plan. Do not assume POS hardware or advanced retail features are included.
+Square is a possible integration, not a dependency or an account already connected to this project. WordPress/WooCommerce or a managed store remain alternatives if the actual requirements justify them; no platform choice is committed. Confirm provider pricing and the client’s actual account terms before quoting operating costs.
 
-Shopify’s official cost guide published November 2026 lists Basic at US$29/month billed annually. Treat that as a planning reference, not a quote. Add payment processing, domain renewal, any paid apps, implementation and agreed maintenance. Confirm current checkout/renewal pricing and the billing term before purchase. A move is not automatically cheaper than Wix; compare actual annual totals. No revenue lift is promised.
+Official implementation references:
 
-Sources checked November 10, 2026:
-- https://www.shopify.com/blog/ecommerce-website-cost
-- https://help.shopify.com/en/manual/products
-- https://help.shopify.com/en/manual/online-store
-- https://help.shopify.com/en/manual/fulfillment/managing-orders
-- https://help.shopify.com/en/manual/online-sales-channels
+- [Square-hosted checkout](https://developer.squareup.com/docs/checkout-api)
+- [Square order checkout](https://developer.squareup.com/docs/checkout-api/square-order-checkout)
+- [Square Payment Links](https://squareup.com/us/en/payment-links)
 
-## What the owners maintain
+## What the owners would maintain
 
-- Products: descriptions, price, stock, heat variants, jar size and photographs.
-- Orders: payment status, pack/ship status, fulfillment and refunds.
-- Content: approved family story, recipes, retailers, market schedule and contact details.
-- Marketing: approved email campaigns and discounts, with clear consent.
+- Approved product descriptions, prices, stock, heat options, jar sizes and images.
+- Orders, packing/shipping, fulfillment and refunds in the agreed store/payment tools.
+- Family story, recipes, retailers, market schedule and contact details.
 
-Developer maintenance covers the custom theme, accessibility, integration health, performance and any changes outside supported theme sections. Put the scope and recurring fee in writing.
+Name the person responsible for software/integration updates, checkout checks, backups and recovery. Hosting, content changes and ongoing search work need clearly agreed scopes. The client AI editing service discussed during planning has not been built; it is not a feature of this repository.
 
 ## Required before accepting real orders
 
-1. Owners approve the story, wordmark treatment, photo use, copy and product names. Resolve 2003 versus 2013 founding dates; this concept avoids asserting a year.
-2. Confirm current ingredients, allergen statements, nutrition/label information, storage, shelf life and dietary claims for each product. Preserve the distinction between original paste and vegan paste.
-3. Confirm SKU and heat combinations, current pricing and stock, weights, package dimensions, shipping destinations/rates, refund policy and customer service commitments.
-4. Set up an owner-controlled Shopify account, payout account, payment provider, tax configuration, shipping and policy pages; use collaboration access for implementation.
-5. Import products and approved content, recreate theme sections, map old URLs and relevant domain redirects, preserve email/DNS and Search Console ownership.
-6. Verify desktop/mobile accessibility and speed, perform test-mode orders covering variants, shipping, tax, confirmation, fulfillment and refund, and reconcile with actual inventory.
-7. Configure analytics and consent as appropriate; record purchase, cart and checkout events without exposing payment or customer data.
-8. Launch under their domain only after review. Keep Wix until orders and redirects are verified; monitor errors, search traffic and sales after launch.
+1. Confirm the owners’ payment provider, online order volume, Wix bill, desired editing workflow and support needs. Do not request credentials in source files.
+2. Approve the story, wordmark, images, copy and product names. Resolve the 2003 versus 2013 founding dates; the concept avoids asserting a year.
+3. Confirm ingredients, allergens, nutrition/label facts, storage, shelf life and dietary claims for each product. Preserve the distinction between original paste and vegan paste.
+4. Confirm SKU/heat combinations, pricing, inventory workflow, package weights/dimensions, shipping destinations/rates, pickup, refunds and customer service policies.
+5. Create separate product and recipe URLs with readable content and links, page titles and descriptions. The current product dialogs are demonstrations, not the final search-friendly page structure. Keep visible product facts and checkout data consistent.
+6. Connect the selected provider using owner-controlled accounts and server-side secrets. Replace demo cart/checkout behavior. Confirm delivery, tax, notifications and stock behavior; keep payment credentials out of browser code.
+7. Preserve domain/email and Google search ownership. Map old product/recipe URLs to relevant new pages, retaining existing URLs where practical. Review both kinnaskitchen.com and linked kinnas.net before any domain change.
+8. Check mobile shopping, accessibility and speed on the final deployment. Test product/heat choices, quantities, shipping/pickup, tax, payment status, confirmation, fulfillment, refund and stock changes using the provider’s supported test flow.
+9. Set up agreed search and purchase measurement without putting customer/payment data in source control. No traffic, ranking or sales improvement has been measured for this concept.
+10. Keep Wix available until checkout and redirects pass verification. Monitor orders, broken links and search visibility after launch. Provide the agreed source files, hosting instructions and recovery/handover information.
 
 ## Assets and editable source
 

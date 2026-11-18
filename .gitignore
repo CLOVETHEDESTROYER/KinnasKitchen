@@ -28,8 +28,13 @@ yarn-error.log*
 
 # Local environment and keys
 .env*
+!.env.example
 .dev.vars*
 *.pem
+*.key
+*.p12
+*.pfx
+.netrc
 
 # Checkout-local tool state
 /.wrangler/
