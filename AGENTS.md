@@ -6,7 +6,7 @@ This is the HyperLabs design concept, not a production ecommerce store. Read `RE
 
 - Preserve the original catalog images, copy and family identity. Use the existing warm raster imagery and current hero; do not introduce SVG graphics into the authored interface.
 - The client has confirmed Square use and reports only a few online orders per month. Exact sales figures and account settings have not been reviewed. Evaluate a simple Square checkout first; the payment integration is not connected yet.
-- Demo checkout must remain clearly labeled until a real integration is configured and verified. Do not collect card details in the prototype or imply that an order was placed.
+- Checkout must remain clearly unavailable until a real integration is configured and verified. Keep the explanation in customer language; do not restore development/demo banners or fake checkout completion screens. Do not collect card details in the prototype or imply that an order was placed.
 - Confirm ingredients, allergens, vegan claims, heat variants, founding dates and current retailers with the owners. Never invent reviews, sales results or search rankings.
 - The separate audit and internal business notes belong outside this repository. Do not copy credentials, customer/order exports or local tool state into source control.
 

@@ -1,0 +1,151 @@
+{
+  "products": [
+    {
+      "id": "5f3d4e9b-91c3-1a82-3a89-5e2fd2c919a2",
+      "displayName": "Laos Chile Paste",
+      "urlPart": "kinna-s-laos-chile-paste-1",
+      "image": "/assets/laos-chile-paste.webp",
+      "price": 12,
+      "size": "6 oz",
+      "vegan": false,
+      "spices": [
+        "Hot"
+      ],
+      "short": "Deep, savory heat. Our original family recipe.",
+      "intro": [
+        "Our Laos Chile Paste is a bold, savory blend of sun-dried chiles, garlic, and traditional Lao spices—crafted from a cherished family recipe. Made in small batches with all-natural ingredients, it's perfect as a marinade, dip, or cooking base.",
+        "Bring the authentic heat and depth of Laos cuisine to your favorite dishes—no preservatives, no artificial ingredients, just rich, handcrafted flavor."
+      ],
+      "recipeTitle": "Spicy Stir-Fried Noodles",
+      "ingredients": [
+        "2 tbsp Laos Chile Paste",
+        "8 oz rice noodles (cooked)",
+        "1 cup mixed vegetables (bell peppers, carrots, broccoli)",
+        "1 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "Fresh cilantro (optional)"
+      ],
+      "instructions": [
+        "In a hot skillet, add sesame oil and stir-fry vegetables until tender.",
+        "Add Laos Chile Paste and soy sauce; stir well.",
+        "Toss in cooked noodles and mix until evenly coated.",
+        "Garnish with cilantro and serve hot."
+      ],
+      "slug": "laos-chile-paste",
+      "recipeSlug": "spicy-stir-fried-noodles"
+    },
+    {
+      "id": "6fc3bb68-0591-9be2-6e1a-c79c375790f0",
+      "displayName": "Vegan Tamarind Chile Sauce",
+      "urlPart": "kinnas-vegan-tamirand-chile-sauce",
+      "image": "/assets/vegan-tamarind-chile-sauce.webp",
+      "price": 13,
+      "size": "12 oz",
+      "vegan": true,
+      "spices": [
+        "Medium",
+        "Hot"
+      ],
+      "short": "Sweet, tangy, and spicy. A little goes a long way.",
+      "intro": [
+        "Sweet, tangy, and spicy—our Vegan Tamarind Chile Sauce is a bold fusion of tamarind, chiles, and aromatic spices that delivers a rich, complex flavor with every bite. Made with all-natural, plant-based ingredients, this sauce is perfect as a dip, glaze, or finishing drizzle.",
+        "It pairs beautifully with grilled vegetables, tofu, noodles, and is especially delicious with chicken alternatives or as a dipping sauce for spring rolls and appetizers.",
+        "No artificial ingredients. No preservatives. Just vibrant, vegan flavor inspired by traditional Laos cooking."
+      ],
+      "recipeTitle": "Tamarind Glazed Chick’n Skewers",
+      "ingredients": [
+        "1/4 cup Vegan Tamarind Chile Sauce",
+        "1 package vegan chicken strips or chunks",
+        "Bell peppers & red onions (cubed)",
+        "Skewers (wooden or metal)"
+      ],
+      "instructions": [
+        "Assemble skewers with vegan chicken and vegetables.",
+        "Brush with Vegan Tamarind Chile Sauce.",
+        "Grill or bake at 400°F for 15–20 minutes, brushing again halfway.",
+        "Serve with rice or salad and extra sauce for dipping."
+      ],
+      "slug": "vegan-tamarind-chile-sauce",
+      "recipeSlug": "tamarind-glazed-vegan-skewers"
+    },
+    {
+      "id": "d784f413-734c-cb50-03f0-ece734caf6b1",
+      "displayName": "Vegan Mango Salsa",
+      "urlPart": "kinnas-vegan-mango-salsa",
+      "image": "/assets/vegan-mango-salsa.webp",
+      "price": 8,
+      "size": "12 oz",
+      "vegan": true,
+      "spices": [
+        "Mild",
+        "Medium",
+        "Hot",
+        "X-Hot"
+      ],
+      "short": "Bright mango sweetness with a chile kick.",
+      "intro": [
+        "Our Vegan Mango Salsa is a tropical twist on traditional heat—sweet, juicy mangoes blended with chiles, herbs, and spices for a bright, balanced flavor with just the right amount of kick. Made with all-natural, plant-based ingredients, it brings a little sunshine to your table.",
+        "Perfect as a dip, taco topping, or side for grilled dishes, this salsa brings a refreshing burst of flavor to any meal.",
+        "No preservatives. No artificial ingredients. Just fresh, bold, and vibrant taste in every bite."
+      ],
+      "recipeTitle": "Mango Salsa Tacos",
+      "ingredients": [
+        "1/2 cup Vegan Mango Salsa",
+        "1 can black beans (drained)",
+        "1 avocado (sliced)",
+        "Corn tortillas",
+        "Shredded cabbage or lettuce"
+      ],
+      "instructions": [
+        "Warm tortillas and layer with black beans, avocado, and cabbage.",
+        "Top with a generous spoonful of Vegan Mango Salsa.",
+        "Serve with lime wedges and enjoy!"
+      ],
+      "slug": "vegan-mango-salsa",
+      "recipeSlug": "mango-salsa-tacos"
+    },
+    {
+      "id": "bb2ab2a7-3daa-df92-1349-ff5013a6dde3",
+      "displayName": "Vegan Chile Paste",
+      "urlPart": "kinnas-vegan-laos-chile-paste",
+      "image": "/assets/vegan-chile-paste.webp",
+      "price": 12,
+      "size": "6 oz",
+      "vegan": true,
+      "spices": [
+        "Medium",
+        "Hot"
+      ],
+      "short": "All the bold flavor. Made entirely from plants.",
+      "intro": [
+        "Our Vegan Chile Paste delivers the same bold, savory heat as our original Laos Chile Paste—without the fish sauce. Crafted with sun-dried chiles, garlic, and a balanced blend of herbs and spices, this plant-based version is rich in flavor and 100% vegan.",
+        "Made in small batches with all-natural ingredients, it's perfect as a marinade, stir-fry base, or dipping sauce. Whether you're cooking traditional dishes or experimenting with your own recipes, this paste adds deep, satisfying spice without any animal products.",
+        "No fish sauce. No preservatives. No artificial ingredients. Just clean, handcrafted heat."
+      ],
+      "recipeTitle": "Vegan Spicy Tofu Bowl",
+      "ingredients": [
+        "2 tbsp Vegan Chile Paste",
+        "1 block extra-firm tofu (cubed)",
+        "1 tbsp olive oil",
+        "1 cup cooked jasmine rice",
+        "1 cup steamed greens (bok choy, spinach, or kale)",
+        "1 tsp lime juice"
+      ],
+      "instructions": [
+        "Pan-fry tofu in olive oil until golden.",
+        "Add Vegan Chile Paste and cook for 2–3 minutes to coat.",
+        "Serve tofu over rice with steamed greens.",
+        "Drizzle with lime juice before serving."
+      ],
+      "slug": "vegan-chile-paste",
+      "recipeSlug": "vegan-spicy-tofu-bowl"
+    }
+  ],
+  "story": [
+    "Our journey began in the heart of our family kitchen, where Grandma lovingly created her signature Laos Chile Paste—a vibrant, savory blend of spices that added the perfect kick to many traditional Laos dishes. What started as a staple at family gatherings quickly became a favorite among friends, neighbors, and eventually, a wider community of food lovers who craved something truly original.",
+    "Inspired by Grandma’s passion and recipes passed down through generations, we decided to turn her beloved chile paste into the foundation of a business. With that, Kinna's Kitchen was born.",
+    "Since launching with our first product, the Laos Chile Paste, we’ve continued to grow—still guided by our family roots and commitment to quality. Every jar we make carries the bold flavors and cultural richness of Laos, crafted with care and tradition in every batch.",
+    "At Kinna’s Kitchen, we believe food is more than just nourishment—it’s a connection to heritage, to family, and to the joy of sharing something truly special.",
+    "Welcome to our kitchen. We're glad you're here."
+  ]
+}

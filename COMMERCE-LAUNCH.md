@@ -1,6 +1,6 @@
 # Kinna’s Kitchen: commerce handover
 
-This is a private design and shopping-flow demo. It does not create orders, charge cards, calculate shipping/tax or check live inventory. Bag data is stored only in the visitor’s browser. Demo checkout needs no personal or payment information.
+This is a private design and shopping-flow demo. It does not create orders, charge cards, calculate shipping/tax or check live inventory. Bag data is stored only in the visitor’s browser. There is no simulated checkout or fake order confirmation. Orders link to the existing shop during review, with an explicit notice that bag contents do not transfer.
 
 ## Confirmed client update and proposed integration
 
@@ -30,8 +30,8 @@ Name the person responsible for software/integration updates, checkout checks, b
 2. Approve the story, wordmark, images, copy and product names. Resolve the 2003 versus 2013 founding dates; the concept avoids asserting a year.
 3. Confirm ingredients, allergens, nutrition/label facts, storage, shelf life and dietary claims for each product. Preserve the distinction between original paste and vegan paste.
 4. Confirm SKU/heat combinations, pricing, inventory workflow, package weights/dimensions, shipping destinations/rates, pickup, refunds and customer service policies.
-5. Create separate product and recipe URLs with readable content and links, page titles and descriptions. The current product dialogs are demonstrations, not the final search-friendly page structure. Keep visible product facts and checkout data consistent.
-6. Connect the selected provider using owner-controlled accounts and server-side secrets. Replace demo cart/checkout behavior. Confirm delivery, tax, notifications and stock behavior; keep payment credentials out of browser code.
+5. Review the implemented product, recipe, cooking guide and New Mexico shopping URLs with the owners. Check titles, descriptions and visible facts. Confirm the final domain and use the search launch checklist in `docs/SEO.md`. Keep visible product facts and checkout data consistent.
+6. Connect the selected provider using owner-controlled accounts and server-side secrets. Connect the local bag to a verified checkout, or replace it with the agreed simpler purchase flow. Set `ORDERING_URL` to the owner-approved Square destination; test its full URL before enabling production indexing. The Wix shop fallback is disabled in production search mode to prevent links looping back through the migration redirects. Confirm delivery, tax, notifications and stock behavior; keep payment credentials out of browser code.
 7. Preserve domain/email and Google search ownership. Map old product/recipe URLs to relevant new pages, retaining existing URLs where practical. Review both kinnaskitchen.com and linked kinnas.net before any domain change.
 8. Check mobile shopping, accessibility and speed on the final deployment. Test product/heat choices, quantities, shipping/pickup, tax, payment status, confirmation, fulfillment, refund and stock changes using the provider’s supported test flow.
 9. Set up agreed search and purchase measurement without putting customer/payment data in source control. No traffic, ranking or sales improvement has been measured for this concept.
@@ -39,10 +39,10 @@ Name the person responsible for software/integration updates, checkout checks, b
 
 ## Assets and editable source
 
-- `app/data/catalog.json`: reviewed product source, descriptions, recipes and heat options.
+- `app/data/storefront.json`: customer-facing product descriptions, recipes and heat options; `app/data/catalog.json` preserves the original source.
 - `public/assets/original/`: all collected original photos, source copy and asset manifest, plus original social icons for preservation. Unrelated Wix social links are intentionally not used in the design.
 - `public/assets/*.webp`: smaller delivery copies. The product photos and labels remain unaltered beyond delivery encoding/resizing.
 - `public/assets/handcrafted-background.webp`: generated decorative background; not represented as a real photograph of the family or production kitchen.
-- `app/page.tsx` and `app/globals.css`: the design and functional demo.
+- `app/components/storefront.tsx`, `app/shop/`, `app/recipes/`, `app/find-us/`, `app/guides/` and `app/globals.css`: storefront and content pages.
 
 No SVG graphics are used in the authored interface. Existing original photographs are used throughout the homepage; original stock food images are shown as general food imagery, not claimed to document the family’s Lao kitchen. The wordmark was text on the original site; the design retains the name and original jar-label artwork.
