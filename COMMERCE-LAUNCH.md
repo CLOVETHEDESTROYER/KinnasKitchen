@@ -2,13 +2,13 @@
 
 This is a private design and shopping-flow demo. It does not create orders, charge cards, calculate shipping/tax or check live inventory. Bag data is stored only in the visitor’s browser. Demo checkout needs no personal or payment information.
 
-## Confirm the provider before choosing an integration
+## Confirmed client update and proposed integration
 
-The owners’ payment provider is **unconfirmed**. Ask whether they use Square, another provider, or different tools at markets and online. Also confirm how many website orders they receive, their current Wix bill, product/stock management, fulfillment needs and who will maintain the new site.
+The client has confirmed **Square** use and says the website receives only **a few orders per month**. This is a qualitative client update, not a verified order count or analytics report. Square account settings, online processing rates and inventory setup have not been reviewed. The current Wix bill, fulfillment needs and ongoing editing/support needs still need confirmation.
 
-If Square is already used and fits their needs, evaluate the custom storefront with Square-hosted checkout. Simple purchase links can suit individual jars or fixed bundles. Keeping a multi-product bag needs a server-side connection for the correct catalog items, heat variants, quantities and trusted prices, with delivery/tax configuration and verified payment status. Test how market sales and online inventory interact; do not assume synchronization. A thank-you redirect alone is not proof of payment.
+Start by evaluating the custom storefront with Square-hosted checkout, keeping the low reported online volume in mind. Simple purchase links can suit individual jars or fixed bundles. Keeping a multi-product bag needs a server-side connection for the correct catalog items, heat variants, quantities and trusted prices, with delivery/tax configuration and verified payment status. Test how market sales and online inventory interact; do not assume synchronization. A thank-you redirect alone is not proof of payment.
 
-Square is a possible integration, not a dependency or an account already connected to this project. WordPress/WooCommerce or a managed store remain alternatives if the actual requirements justify them; no platform choice is committed. Confirm provider pricing and the client’s actual account terms before quoting operating costs.
+Square is the confirmed provider, but its account is not connected to this project. Prefer the simplest setup that meets the owners’ purchasing and fulfillment needs; WordPress/WooCommerce or another store layer would need a specific reason. Confirm provider pricing and the client’s actual account terms before quoting operating costs.
 
 Official implementation references:
 
@@ -26,7 +26,7 @@ Name the person responsible for software/integration updates, checkout checks, b
 
 ## Required before accepting real orders
 
-1. Confirm the owners’ payment provider, online order volume, Wix bill, desired editing workflow and support needs. Do not request credentials in source files.
+1. Review the confirmed Square account’s online checkout, catalog and processing-rate settings. Confirm the Wix bill, desired editing workflow, fulfillment and support needs; review actual order history only if needed. Do not request credentials in source files.
 2. Approve the story, wordmark, images, copy and product names. Resolve the 2003 versus 2013 founding dates; the concept avoids asserting a year.
 3. Confirm ingredients, allergens, nutrition/label facts, storage, shelf life and dietary claims for each product. Preserve the distinction between original paste and vegan paste.
 4. Confirm SKU/heat combinations, pricing, inventory workflow, package weights/dimensions, shipping destinations/rates, pickup, refunds and customer service policies.

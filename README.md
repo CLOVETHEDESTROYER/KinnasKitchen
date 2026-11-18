@@ -2,7 +2,7 @@
 
 HyperLabs website concept for Kinna’s Kitchen, with a warm handcrafted design inspired by the family’s Lao recipes and New Mexico roots. The source includes original catalog photography, product copy and recipes, plus the selected direction for the generated hero scene.
 
-**Status: design and shopping-flow demo.** The cart is stored in the visitor’s browser. Checkout does not charge a card, create an order, calculate shipping/tax or verify inventory. The owners’ payment provider is unconfirmed; Square is an option to evaluate if they use it.
+**Status: design and shopping-flow demo.** The cart is stored in the visitor’s browser. Checkout does not charge a card, create an order, calculate shipping/tax or verify inventory. The client has confirmed that they use Square and receive only a few online orders per month. Square checkout remains to be connected; account settings and exact sales figures have not been reviewed.
 
 ## Run locally
 
@@ -66,4 +66,4 @@ Pushing to GitHub does not update the hosted preview. `.openai/hosting.json` ret
 
 ## Before launch
 
-Confirm the payment provider, real order volume, product labels, shipping and tax rules, and who will maintain the store. Add proper product/recipe pages, connect the agreed payment flow and complete an order/refund test before replacing Wix. [The launch notes](COMMERCE-LAUNCH.md) track that work. Keep secrets, customer records and payment details outside source control.
+Confirm the Square account setup, online processing rate, product labels, shipping and tax rules, and who will maintain the store. Add proper product/recipe pages, connect the agreed payment flow and complete an order/refund test before replacing Wix. [The launch notes](COMMERCE-LAUNCH.md) track that work. Keep secrets, customer records and payment details outside source control.
