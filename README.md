@@ -2,7 +2,7 @@
 
 HyperLabs website concept for Kinna’s Kitchen, with a warm handcrafted design inspired by the family’s Lao recipes and New Mexico roots. The source includes original catalog photography, product copy and recipes, plus the selected direction for the generated hero scene.
 
-**Status: design and shopping-flow demo.** The cart is stored in the visitor’s browser. The bag does not charge a card, create an order, calculate shipping/tax or verify inventory. Customer copy directs orders to the existing shop during review; the fake checkout and completion screens have been removed. The client has confirmed that they use Square and receive only a few online orders per month. Square checkout remains to be connected; account settings and exact sales figures have not been reviewed.
+**Status: design and shopping-flow demo.** The cart is stored in the visitor’s browser. The bag does not charge a card, create an order, calculate shipping/tax or verify inventory. Customers can ask about ordering while the owners supply their Square payment link; the fake checkout and completion screens have been removed. The client has confirmed that they use Square and receive only a few online orders per month. The external Square handoff is configurable through `SQUARE_PAYMENT_LINK`, but the real link has not been supplied or tested; account settings and exact sales figures have not been reviewed.
 
 ## Run locally
 
@@ -44,6 +44,7 @@ The app uses React, TypeScript and Vinext (Next.js-compatible routing), with Vit
 | `app/data/storefront.json` | Customer-facing product copy, prices, heat choices, story and recipes |
 | `app/data/catalog.json` | Preserved original catalog source |
 | `docs/SEO.md` | Search configuration, redirects and launch checks |
+| `docs/SQUARE.md` | Connect the owner-provided Square payment link and verify checkout |
 | `public/assets/original/` | Original photos, source copy and asset manifest |
 | `public/assets/*.webp` | Delivery images, including the current `hero-products-v4.webp` |
 | `design-explorations/` | Hero generation prompts and prior image versions |
@@ -70,4 +71,4 @@ Pushing to GitHub does not update the hosted preview. `.openai/hosting.json` ret
 
 ## Before launch
 
-Confirm the Square account setup, online processing rate, product labels, shipping and tax rules, and who will maintain the store. Review the new product/recipe pages and current labels, connect the agreed payment flow and complete an order/refund test before replacing Wix. [The launch notes](COMMERCE-LAUNCH.md) track that work. Keep secrets, customer records and payment details outside source control.
+Add the owner-provided Square payment link, then confirm what it sells, the account setup, online processing rate, product labels, shipping and tax rules, and who will maintain the store. Review the new product/recipe pages and current labels, connect the agreed payment flow and complete an order/refund test before replacing Wix. [The launch notes](COMMERCE-LAUNCH.md) track that work. Keep secrets, customer records and payment details outside source control.

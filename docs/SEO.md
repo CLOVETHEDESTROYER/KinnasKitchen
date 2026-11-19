@@ -10,7 +10,7 @@ Implemented locally on November 18, 2026. This is implementation guidance; it is
 - Organization, BreadcrumbList and descriptive Product JSON-LD use visible source facts. Product offers, availability, reviews and ratings are intentionally absent until the Square catalog, current prices, inventory and purchasing flow are approved. Descriptive Product markup alone does not qualify these pages for Google's product rich results. Recipe markup is deferred until owners can supply actual dish photographs and approve recipe details; existing general food images are not presented as those specific dishes.
 - All four known original Wix `/product-page/…` paths return permanent 308 redirects to the matching new product pages. Unknown product or recipe slugs return 404.
 - A smaller, explicit storefront data file replaces the raw archived Wix catalog in the homepage client component. All original source material and photography remain in the repository.
-- Development banners, internal asset descriptions and simulated checkout/completion screens have been removed. The local bag is a selection aid; checkout links to the existing shop during review, with an explanation that selections must be made again there.
+- Development banners, internal asset descriptions and simulated checkout/completion screens have been removed. The local bag is a selection aid. The owner-provided Square payment link is pending; checkout defaults to contact help and clearly explains the separate Square handoff when configured.
 
 ## Production configuration
 
@@ -21,14 +21,14 @@ On the final HTTPS production host, set:
 ```text
 SITE_URL=https://www.kinnaskitchen.com
 SITE_INDEXABLE=true
-ORDERING_URL=<owner-approved HTTPS Square store or ordering URL>
+SQUARE_PAYMENT_LINK=<exact owner-approved Square payment/store URL>
 ```
 
 Set environment values in the host's runtime configuration. The built Cloudflare Worker reads them at runtime. Restart/redeploy as required by that host. The final canonical origin must match the selected domain, including the www choice.
 
 Only the explicit HTTPS origin plus `SITE_INDEXABLE=true` enables indexable page metadata, the 13-URL sitemap and the robots sitemap reference. There are no fabricated modification dates.
 
-During local review, an unset ORDERING_URL directs to the existing Wix shop. In production search mode, an unset ORDERING_URL directs ordering inquiries to email; it does not point back to Wix paths on the domain being replaced. This avoids an ordering loop through the migration redirects. An ORDERING_URL is only a destination link, not a cart or inventory integration. A multi-item bag still needs the real Square checkout work listed in COMMERCE-LAUNCH.md.
+An unset or invalid Square link directs ordering inquiries to email in every environment. There is no Wix fallback. `SQUARE_PAYMENT_LINK` takes precedence over the legacy `ORDERING_URL` alias. A configured link is an external destination only; it does not transfer the local bag, prices, quantities or heat choices. Verify the actual link and checkout using `docs/SQUARE.md` before launch. Payment readiness is independent of the search-indexing setting.
 
 ## Before replacing Wix
 
