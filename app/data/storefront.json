@@ -4,7 +4,7 @@
       "id": "5f3d4e9b-91c3-1a82-3a89-5e2fd2c919a2",
       "displayName": "Laos Chile Paste",
       "urlPart": "kinna-s-laos-chile-paste-1",
-      "image": "/assets/laos-chile-paste.webp",
+      "image": "/assets/laos-chile-paste-studio-v1.webp",
       "price": 12,
       "size": "6 oz",
       "vegan": false,
@@ -32,13 +32,14 @@
         "Garnish with cilantro and serve hot."
       ],
       "slug": "laos-chile-paste",
-      "recipeSlug": "spicy-stir-fried-noodles"
+      "recipeSlug": "spicy-stir-fried-noodles",
+      "imageSmall": "/assets/laos-chile-paste-studio-v1-600.webp"
     },
     {
       "id": "6fc3bb68-0591-9be2-6e1a-c79c375790f0",
       "displayName": "Vegan Tamarind Chile Sauce",
       "urlPart": "kinnas-vegan-tamirand-chile-sauce",
-      "image": "/assets/vegan-tamarind-chile-sauce.webp",
+      "image": "/assets/vegan-tamarind-chile-sauce-studio-v1.webp",
       "price": 13,
       "size": "12 oz",
       "vegan": true,
@@ -66,13 +67,14 @@
         "Serve with rice or salad and extra sauce for dipping."
       ],
       "slug": "vegan-tamarind-chile-sauce",
-      "recipeSlug": "tamarind-glazed-vegan-skewers"
+      "recipeSlug": "tamarind-glazed-vegan-skewers",
+      "imageSmall": "/assets/vegan-tamarind-chile-sauce-studio-v1-600.webp"
     },
     {
       "id": "d784f413-734c-cb50-03f0-ece734caf6b1",
       "displayName": "Vegan Mango Salsa",
       "urlPart": "kinnas-vegan-mango-salsa",
-      "image": "/assets/vegan-mango-salsa.webp",
+      "image": "/assets/vegan-mango-salsa-studio-v1.webp",
       "price": 8,
       "size": "12 oz",
       "vegan": true,
@@ -102,13 +104,14 @@
         "Serve with lime wedges and enjoy!"
       ],
       "slug": "vegan-mango-salsa",
-      "recipeSlug": "mango-salsa-tacos"
+      "recipeSlug": "mango-salsa-tacos",
+      "imageSmall": "/assets/vegan-mango-salsa-studio-v1-600.webp"
     },
     {
       "id": "bb2ab2a7-3daa-df92-1349-ff5013a6dde3",
       "displayName": "Vegan Chile Paste",
       "urlPart": "kinnas-vegan-laos-chile-paste",
-      "image": "/assets/vegan-chile-paste.webp",
+      "image": "/assets/vegan-chile-paste-studio-v1.webp",
       "price": 12,
       "size": "6 oz",
       "vegan": true,
@@ -138,7 +141,8 @@
         "Drizzle with lime juice before serving."
       ],
       "slug": "vegan-chile-paste",
-      "recipeSlug": "vegan-spicy-tofu-bowl"
+      "recipeSlug": "vegan-spicy-tofu-bowl",
+      "imageSmall": "/assets/vegan-chile-paste-studio-v1-600.webp"
     }
   ],
   "story": [

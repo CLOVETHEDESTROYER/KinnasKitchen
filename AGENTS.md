@@ -5,6 +5,7 @@ This is the HyperLabs design concept, not a production ecommerce store. Read `RE
 ## Scope and facts
 
 - Preserve the original catalog images, copy and family identity. Use the existing warm raster imagery and current hero; do not introduce SVG graphics into the authored interface.
+- The shared raster wordmark and studio product-image variants are documented in `docs/BRAND-ASSETS.md`. Preserve their original references and retouch masters; fine label details need owner review before public use.
 - The client has confirmed Square use and reports only a few online orders per month. Exact sales figures and account settings have not been reviewed. Evaluate a simple Square checkout first; the payment integration is not connected yet.
 - The owners will provide a Square payment link. `SQUARE_PAYMENT_LINK` configures the external destination; it does not transfer this site's bag. Verify the link's exact products, variants, quantities and fulfillment before launch. Do not restore a Wix checkout fallback.
 - Keyword research is saved outside the repository in `../internal/Kinnas_Kitchen_SEO_Research_2026-11-18.md`, including the November 19 broader US shortlist and source records in `../internal/seo-evidence/`. Consult it when SEO work resumes; advertiser competition is not organic difficulty.
