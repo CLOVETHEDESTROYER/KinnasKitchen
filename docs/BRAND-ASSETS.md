@@ -6,7 +6,7 @@ The lettering on the original jars is a very close visual match to **Herculanum*
 
 - `public/assets/kinnas-wordmark-red-v1.png`: transparent, 883 × 221, brand red `#9e3627`.
 - `public/assets/kinnas-wordmark-white-v1.png`: transparent white version for future dark backgrounds.
-- `app/components/brand-wordmark.tsx`: shared header/footer mark; the word “Kitchen” and existing tagline remain accessible HTML text.
+- `app/components/brand-wordmark.tsx`: shared header/footer mark showing only “Kinna’s,” with the existing tagline below.
 
 The wordmark was rendered from the locally installed Herculanum font. The font binary is not copied into the repository or served to visitors. Static PNG delivery makes the mark consistent across devices and uses no SVG. The website's body and heading fonts are unchanged.
 
