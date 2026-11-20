@@ -4,10 +4,12 @@ This is the HyperLabs design concept, not a production ecommerce store. Read `RE
 
 ## Scope and facts
 
+- Describe the family heritage as Lao and the production location as New Mexico, the US state. Do not add Mexican heritage claims; the client corrected that earlier direction. Preserve the original story wording.
+
 - Preserve the original catalog images, copy and family identity. Use the existing warm raster imagery and current hero; do not introduce SVG graphics into the authored interface.
 - The shared raster wordmark and studio product-image variants are documented in `docs/BRAND-ASSETS.md`. Preserve their original references and retouch masters; fine label details need owner review before public use.
 - The client has confirmed Square use and reports only a few online orders per month. Exact sales figures and account settings have not been reviewed. Evaluate a simple Square checkout first; the payment integration is not connected yet.
-- The owners will provide a Square payment link. `SQUARE_PAYMENT_LINK` configures the external destination; it does not transfer this site's bag. Verify the link's exact products, variants, quantities and fulfillment before launch. Do not restore a Wix checkout fallback.
+- The owners will provide a Square payment link. `SQUARE_PAYMENT_LINK` configures the general external destination; product-specific Buy links are documented in `docs/SQUARE.md`. The former local bag is removed; keep one product-page-to-Square ordering path. Verify the link's exact products, variants, quantities and fulfillment before launch. Do not restore a Wix checkout fallback.
 - Keyword research is saved outside the repository in `../internal/Kinnas_Kitchen_SEO_Research_2026-11-18.md`, including the November 19 broader US shortlist and source records in `../internal/seo-evidence/`. Consult it when SEO work resumes; advertiser competition is not organic difficulty.
 - Checkout must remain clearly unavailable until a real integration is configured and verified. Keep the explanation in customer language; do not restore development/demo banners or fake checkout completion screens. Do not collect card details in the prototype or imply that an order was placed.
 - Confirm ingredients, allergens, vegan claims, heat variants, founding dates and current retailers with the owners. Never invent reviews, sales results or search rankings.

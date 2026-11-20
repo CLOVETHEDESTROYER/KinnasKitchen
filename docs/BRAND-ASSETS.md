@@ -30,3 +30,9 @@ The photos were edited with the built-in image-generation tool, using the origin
 These are AI-retouched visual variants, not pixel-identical or documentary replacements for the source files. Retouching can change fine lettering and illustration details. The owners should compare the labels, Lao script, small print and food appearance against their real packaging before approving public sales use. Do not describe these as a new physical product, use them to infer ingredients or certifications, or discard the source photography.
 
 The approved hero scene, other original photographs, product facts and Square ordering behavior are unchanged.
+
+## Website typography and color
+
+The local brand preview pairs Barlow Condensed Bold for bold display headlines, product names and calls to action with Libre Caslon Display for editorial and family-story headings, and DM Sans for body and interface text. Barlow Condensed is self-hosted in `public/fonts/`; its SIL Open Font License is included alongside it.
+
+The supporting palette adds mango gold `#e5b74d` to the existing cream, chile red and deep green. Product images and packaging artwork are preserved. The homepage reflects the original site's Lao family heritage and New Mexico location, with a shared savory/tangy/fruity guide on the home and shop pages. No new ingredients, heat options, discounts, bundles or fulfillment promises were added.

@@ -2,7 +2,6 @@ import BrandWordmark from './brand-wordmark';
 export default function PageShell({ children }: { children: React.ReactNode }) {
   return <>
     <a href="#main" className="skip">Skip to content</a>
-    <div className="announcement">A taste of Laos. A little New Mexico soul. <span>Handcrafted in small batches.</span></div>
     <header className="header inner-header"><BrandWordmark/>
       <nav className="inner-nav" aria-label="Main navigation"><a href="/shop">Shop</a><a href="/#story">Our story</a><a href="/recipes">Recipes</a><a href="/find-us">Find us</a></nav>
     </header>

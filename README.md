@@ -2,7 +2,7 @@
 
 HyperLabs website concept for Kinna’s Kitchen, with a warm handcrafted design inspired by the family’s Lao recipes and New Mexico roots. The source includes original catalog photography, product copy and recipes, plus the selected direction for the generated hero scene.
 
-**Status: design and shopping-flow demo.** The cart is stored in the visitor’s browser. The bag does not charge a card, create an order, calculate shipping/tax or verify inventory. Customers can ask about ordering while the owners supply their Square payment link; the fake checkout and completion screens have been removed. The client has confirmed that they use Square and receive only a few online orders per month. The external Square handoff is configurable through `SQUARE_PAYMENT_LINK`, but the real link has not been supplied or tested; account settings and exact sales figures have not been reviewed.
+**Status: design and shopping-flow demo.** Product cards lead to product details, then to an owner-configured Square checkout. The previous browser-only bag and local heat/quantity selectors have been removed so customers have one ordering path. Customers can ask about ordering while the owners supply their Square payment link; the fake checkout and completion screens have been removed. The client has confirmed that they use Square and receive only a few online orders per month. The external Square handoff is configurable through `SQUARE_PAYMENT_LINK`, but the real link has not been supplied or tested; account settings and exact sales figures have not been reviewed.
 
 ## Run locally
 
@@ -37,7 +37,7 @@ The app uses React, TypeScript and Vinext (Next.js-compatible routing), with Vit
 
 | Path | Purpose |
 | --- | --- |
-| `app/page.tsx`, `app/components/storefront.tsx` | Homepage, product quick view and local bag |
+| `app/page.tsx`, `app/components/storefront.tsx` | Homepage, product links and family-story dialog |
 | `app/shop/`, `app/recipes/`, `app/find-us/`, `app/guides/` | Readable product, recipe, local shopping and cooking guide pages |
 | `app/lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts` | Page metadata and environment-controlled indexing |
 | `app/globals.css`, `app/fonts.css` | Layout, colors, typography and responsive styles |
