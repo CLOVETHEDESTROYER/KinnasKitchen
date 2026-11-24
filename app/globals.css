@@ -159,3 +159,6 @@
 
   .shop-intro-page { padding-block: 8px 24px; }
 }
+
+.retailers>a{font:24px var(--serif);text-align:center;display:block}.retailers>a:hover{color:#e3c58d}.stockist-grid li a{width:100%;display:flex;align-items:center;justify-content:center}.stockist-grid .stockist-salsa-saint{background:#f7bd72;padding:8px}
+.stockist-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1000px;margin-inline:auto}@media(max-width:600px){.stockist-grid{grid-template-columns:1fr}}

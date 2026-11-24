@@ -31,6 +31,11 @@ These are AI-retouched visual variants, not pixel-identical or documentary repla
 
 The approved hero scene, other original photographs, product facts and Square ordering behavior are unchanged.
 
+## Retailer marks
+
+- `public/assets/retailers/salsa-saint.png` is the official Salsa Saint image from its website’s social-sharing metadata. It is used to identify and link to the Albuquerque retailer: [salsasaint.com](https://www.salsasaint.com/).
+- Salsa Saint’s official about page lists its Old Town Albuquerque location at 400 Romero St NW, Unit 2. Retailer availability can change, so the Find Us page directs customers to contact the retailer before visiting.
+
 ## Website typography and color
 
 The local brand preview pairs Barlow Condensed Bold for bold display headlines, product names and calls to action with Libre Caslon Display for editorial and family-story headings, and DM Sans for body and interface text. Barlow Condensed is self-hosted in `public/fonts/`; its SIL Open Font License is included alongside it.
