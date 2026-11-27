@@ -1,74 +1,32 @@
-# Kinna’s Kitchen
+# Kinna’s
 
-HyperLabs website concept for Kinna’s Kitchen, with a warm handcrafted design inspired by the family’s Lao recipes and New Mexico roots. The source includes original catalog photography, product copy and recipes, plus the selected direction for the generated hero scene.
+HyperLabs website for Kinna’s handcrafted Lao chile pastes, sauces and mango salsa. The current design and retailer updates from `origin/main` are preserved alongside the integrated cart.
 
-**Status: design and shopping-flow demo.** Product cards lead to product details, then to an owner-configured Square checkout. The previous browser-only bag and local heat/quantity selectors have been removed so customers have one ordering path. Customers can ask about ordering while the owners supply their Square payment link; the fake checkout and completion screens have been removed. The client has confirmed that they use Square and receive only a few online orders per month. The external Square handoff is configurable through `SQUARE_PAYMENT_LINK`, but the real link has not been supplied or tested; account settings and exact sales figures have not been reviewed.
+**Hosting: Vercel / Next.js 16 / Node 24.** The earlier Vinext/Cloudflare/Sites starter is retired. Vercel project: `hyper-labs-ai/kinnaskitchen`, current staging domain `kinnaskitchen.vercel.app`. The final domain moves to `kinnaskitchen.com` after launch verification.
 
-## Run locally
+**Payments: Square Sandbox works locally; live payments remain gated.** The bag supports mixed jars, heat choices and quantities. Customers explicitly choose free local pickup arranged after ordering or $9.99 delivery. Square supplies checkout prices and configured item tax; pickup has no delivery fee. Stock counts remain tracked without being used as a website purchasing limit.
 
-Use Node.js 22.13 or newer. `.nvmrc` selects Node 24. If your default Node is older, switch versions first.
+The production preparation adds private server credentials, durable checkout references/rate limits through Upstash Redis, signed Square payment/refund webhooks, direct signed-receipt status lookup, automatic display-price refresh and safe preview indexing. The webhook/storage paths have automated tests, but live account mapping, hosted Redis and the real webhook subscription still need account setup and end-to-end verification.
+
+## Develop locally
 
 ```sh
-nvm use
-npm run install:ci
+npm ci
+# Add private Sandbox settings to .env.local. See .env.example.
 npm run dev
 ```
 
-The default local address is `http://localhost:5173`. To use the port used during the design review:
+Local address: `http://127.0.0.1:5173`. Next.js reads `.env.local`; `.dev.vars` is no longer used. Local Sandbox can use temporary in-memory order records. Vercel deployments always require durable Redis to enable checkout. Keep Preview and Production credentials/databases separate.
 
 ```sh
-npm run dev -- --port 5178
-```
-
-No application credentials are needed for local review. `.env.example` documents production search and ordering settings; real local environment files are ignored.
-
-## Build and preview
-
-```sh
+npm test
+npm run typecheck
 npm run build
 npm start
 ```
 
-Use the local URL printed by the preview command. The production build contains a Cloudflare Worker in `dist/server/` and client assets in `dist/client/`; build output is ignored by Git.
+## Vercel and live Square setup
 
-The app uses React, TypeScript and Vinext (Next.js-compatible routing), with Vite and Cloudflare Workers tooling. See [the runtime guide](docs/SITES-RUNTIME.md) for installation, local state and deployment conventions.
+Follow [the Vercel launch handoff](docs/VERCEL-LAUNCH.md) and [Square checkout details](docs/SQUARE-CHECKOUT.md). No secret values are committed. `scripts/prepare-square-production.mjs` reads the live catalog without changing it and saves an ignored mapping review. No production checkout activates without the explicit live switch and complete configuration.
 
-## Where to make changes
-
-| Path | Purpose |
-| --- | --- |
-| `app/page.tsx`, `app/components/storefront.tsx` | Homepage, product links and family-story dialog |
-| `app/shop/`, `app/recipes/`, `app/find-us/`, `app/guides/` | Readable product, recipe, local shopping and cooking guide pages |
-| `app/lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts` | Page metadata and environment-controlled indexing |
-| `app/globals.css`, `app/fonts.css` | Layout, colors, typography and responsive styles |
-| `app/data/storefront.json` | Customer-facing product copy, prices, heat choices, story and recipes |
-| `app/data/catalog.json` | Preserved original catalog source |
-| `docs/SEO.md` | Search configuration, redirects and launch checks |
-| `docs/SQUARE.md` | Connect the owner-provided Square payment link and verify checkout |
-| `public/assets/original/` | Original photos, source copy and asset manifest |
-| `public/assets/*.webp` | Delivery images, including the current `hero-products-v4.webp` |
-| `design-explorations/` | Hero generation prompts and prior image versions |
-| `COMMERCE-LAUNCH.md` | Decisions and checks still needed for real ecommerce |
-| `.openai/hosting.json` | Identity/configuration for the existing Sites preview |
-
-Keep the original product photos and labels. The hero is AI-composited and should not be described as a documentary photograph. The prototype does not provide a client AI editor.
-
-## GitHub and builds
-
-This folder is the website repository. The separate `kinna-audit/` and workspace `internal/` folders contain reports and business planning and are outside this repository.
-
-The `Build` GitHub Actions workflow installs the locked dependencies and builds pull requests and pushes to `main`. It has read-only repository permissions and does not deploy. Start with a private repository; no public open-source license has been added to this client project.
-
-To upload this prepared local repository using GitHub CLI, run from this folder after signing into the intended GitHub account:
-
-```sh
-gh repo create kinnas-kitchen --private --source=. --remote=origin --push
-```
-
-Alternatively, create an empty private repository on GitHub, add its URL as `origin`, and push `main`. Do not initialize the remote with a second README or unrelated history.
-
-Pushing to GitHub does not update the hosted preview. `.openai/hosting.json` retains the existing Site identity; use the Sites publishing workflow to update that same preview. Another hosting provider needs an appropriate Worker/runtime deployment setup, not just a copy of generated HTML.
-
-## Before launch
-
-Add the owner-provided Square payment link, then confirm what it sells, the account setup, online processing rate, product labels, shipping and tax rules, and who will maintain the store. Review the new product/recipe pages and current labels, connect the agreed payment flow and complete an order/refund test before replacing Wix. [The launch notes](COMMERCE-LAUNCH.md) track that work. Keep secrets, customer records and payment details outside source control.
+Original photography is preserved in `public/assets/original/`; selected retouch masters are in `design-explorations/`. Read [brand asset notes](docs/BRAND-ASSETS.md) for the small-label approval requirement. Preserve the latest family story, Lao heritage, retailer list and raster assets.

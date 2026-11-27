@@ -1,0 +1,13 @@
+.env*
+!.env.example
+.dev.vars*
+work/
+outputs/
+.openai/
+.agents/
+.codex/
+.wrangler/
+.sites-runtime/
+dist/
+design-explorations/
+internal/

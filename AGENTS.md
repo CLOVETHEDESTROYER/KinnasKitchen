@@ -1,25 +1,23 @@
-# Kinna’s Kitchen website
+# Kinna’s website
 
-This is the HyperLabs design concept, not a production ecommerce store. Read `README.md` and `COMMERCE-LAUNCH.md` before changing shopping behavior or deployment.
+This project targets **Vercel with standard Next.js 16 and Node 24**. Read `README.md`, `docs/VERCEL-LAUNCH.md` and `docs/SQUARE-CHECKOUT.md` before changing checkout or deployment. The earlier ChatGPT Sites/Cloudflare runtime is retired; do not restore its build scripts or require that hosting workflow.
 
 ## Scope and facts
 
-- Describe the family heritage as Lao and the production location as New Mexico, the US state. Do not add Mexican heritage claims; the client corrected that earlier direction. Preserve the original story wording.
+- Describe the family heritage as Lao and production as New Mexico, the US state. Preserve the latest upstream design, family story, retailer list, typography and all source photography. No authored SVG graphics. The selected hero is `hero-products-v4.webp`.
+- The brand mark is Kinna’s, with no appended Kitchen word. Keep the shared raster wordmark and responsive story signature. Retouch masters and label-review notes are in `docs/BRAND-ASSETS.md`.
+- Square use is confirmed. The client reports a few online orders per month, with no verified account analytics. The full bag, product heat options, quantities, 7.625% test tax, optional $9.99 delivery and free local pickup have been tested in Sandbox. No fulfillment option is preselected. Pickup arrangements are confirmed directly after ordering.
+- Keep Square inventory tracking and counts. The user specifically wants continued ordering despite stale/zero counts. Do not inflate stock or disable tracking. Still reject invalid, archived or explicitly unsellable catalog selections.
+- Production is gated by separate live credentials/mapping, private receipt signing, durable Redis, webhook settings, merchant/location, explicit `SQUARE_LIVE_ENABLED=true` and a non-preview environment. Never enable live payments solely because a token exists. Never use Sandbox IDs with production credentials.
+- Square supplies checkout prices and catalog taxes. Product display prices refresh from Square when integration is enabled, with approved static fallback on display-read failure. No browser-supplied price is trusted. Tax and fulfillment production review remains in the launch checklist.
+- Payment confirmation requires verified Square payment data. Webhooks require a valid signature, expected merchant, durable status persistence, duplicate handling and retryable failures. Browser redirects are not proof of payment. Do not store card details or customer exports in this repository.
+- Credentials belong only in ignored local files and Vercel’s private environment variables. Never print tokens, use browser-exposed prefixes or commit runtime files. `work/production-square.env` is the ignored manual handoff file; it is not automatically loaded by Next.js.
+- Preserve SEO research in `../internal/Kinnas_Kitchen_SEO_Research_2026-11-18.md`; advertiser competition is not organic difficulty. Keep staging noindex until domain/redirect readiness. The final domain will be `kinnaskitchen.com`; the current Vercel project is `hyper-labs-ai/kinnaskitchen`.
 
-- Preserve the original catalog images, copy and family identity. Use the existing warm raster imagery and current hero; do not introduce SVG graphics into the authored interface.
-- The shared raster wordmark and studio product-image variants are documented in `docs/BRAND-ASSETS.md`. Preserve their original references and retouch masters; fine label details need owner review before public use.
-- The client has confirmed Square use and reports only a few online orders per month. Exact sales figures and account settings have not been reviewed. Evaluate a simple Square checkout first; the payment integration is not connected yet.
-- The owners will provide a Square payment link. `SQUARE_PAYMENT_LINK` configures the general external destination; product-specific Buy links are documented in `docs/SQUARE.md`. The former local bag is removed; keep one product-page-to-Square ordering path. Verify the link's exact products, variants, quantities and fulfillment before launch. Do not restore a Wix checkout fallback.
-- Keyword research is saved outside the repository in `../internal/Kinnas_Kitchen_SEO_Research_2026-11-18.md`, including the November 19 broader US shortlist and source records in `../internal/seo-evidence/`. Consult it when SEO work resumes; advertiser competition is not organic difficulty.
-- Checkout must remain clearly unavailable until a real integration is configured and verified. Keep the explanation in customer language; do not restore development/demo banners or fake checkout completion screens. Do not collect card details in the prototype or imply that an order was placed.
-- Confirm ingredients, allergens, vegan claims, heat variants, founding dates and current retailers with the owners. Never invent reviews, sales results or search rankings.
-- The separate audit and internal business notes belong outside this repository. Do not copy credentials, customer/order exports or local tool state into source control.
+## Development and deployment
 
-## Development
-
-- Use Node >=22.13; `.nvmrc` and CI use Node 24.
-- `npm run install:ci` installs the locked dependencies. `npm run dev` starts the local preview. `npm run build` validates the production build; `npm start` previews it locally.
-- Run checks appropriate to changes. Do not install new dependencies or run broad unrelated refactors for copy or styling changes.
-- Keep `package-lock.json` aligned with `package.json`. Preserve the Sites build integration, Worker entry point and hosting manifest identity.
-- Updates to GitHub do not publish a Site. Use the existing Site identity and its supported publishing workflow only when deployment is requested.
-- The original starter/runtime documentation is retained in `docs/SITES-RUNTIME.md`.
+- `npm ci`, `npm run dev` (port 5173), `npm test`, `npm run typecheck`, `npm run build`, `npm start`.
+- Keep the lockfile aligned. No new dependencies or broad refactors for small copy changes.
+- Vercel builds the repository root as Next.js using `vercel.json`. No `dist/` output directory or Worker bindings. `.vercelignore` excludes secrets, local artifacts, retouch masters and historical Sites metadata.
+- Push a preparation branch for preview review. Do not merge to the production branch, switch domains or enable live payments until the launch checklist is completed or the user specifically authorizes the action.
+- The original Sites documentation is retained only as historical reference in `docs/SITES-RUNTIME.md`.

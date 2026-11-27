@@ -1,3 +1,7 @@
+> Current production preparation: Vercel/Next.js. Use `docs/VERCEL-LAUNCH.md` and `docs/SQUARE-CHECKOUT.md`; earlier Worker/fixed-link statements below are historical. Live credentials, hosted Redis/webhook, fulfillment policies and payment/refund verification remain outstanding.
+
+> Update, November 27, 2026: local Square Sandbox full-bag checkout is implemented and verified. See `docs/SQUARE-CHECKOUT.md` for current configuration and remaining production work. The production readiness checklist below still applies.
+
 # Kinna’s Kitchen: commerce handover
 
 This is a private design and shopping-flow demo. It does not create orders, charge cards, calculate shipping/tax or check live inventory. The former browser-only bag has been removed; product cards now lead to product pages and configured Square destinations. There is no simulated checkout or fake order confirmation. The owners will supply a Square payment link. Until it is configured, ordering buttons offer contact help. With a valid link, buttons open Square and ask customers to review their options and delivery details there.
