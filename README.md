@@ -2,7 +2,7 @@
 
 HyperLabs website concept for Kinna’s Kitchen, with a warm handcrafted design inspired by the family’s Lao recipes and New Mexico roots. The source includes original catalog photography, product copy and recipes, plus the selected direction for the generated hero scene.
 
-**Status: design and shopping-flow demo.** The cart is stored in the visitor’s browser. The bag does not charge a card, create an order, calculate shipping/tax or verify inventory. Customers can ask about ordering while the owners supply their Square payment link; the fake checkout and completion screens have been removed. The client has confirmed that they use Square and receive only a few online orders per month. The external Square handoff is configurable through `SQUARE_PAYMENT_LINK`, but the real link has not been supplied or tested; account settings and exact sales figures have not been reviewed.
+**Status: Square Sandbox checkout connected locally.** The bag supports mixed products, heat options and quantities. Square supplies checkout prices and taxes, adds $9.99 delivery, and collects the shipping address. A successful Sandbox payment has been verified through the website return page. Live payments are disabled pending production credentials, real catalog mapping, fulfillment and tax review. See [the checkout setup](docs/SQUARE-CHECKOUT.md).
 
 ## Run locally
 

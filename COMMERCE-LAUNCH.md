@@ -1,3 +1,5 @@
+> Update, November 27, 2026: local Square Sandbox full-bag checkout is implemented and verified. See `docs/SQUARE-CHECKOUT.md` for current configuration and remaining production work. The production readiness checklist below still applies.
+
 # Kinna’s Kitchen: commerce handover
 
 This is a private design and shopping-flow demo. It does not create orders, charge cards, calculate shipping/tax or check live inventory. Bag data is stored only in the visitor’s browser. There is no simulated checkout or fake order confirmation. The owners will supply a Square payment link. Until it is configured, ordering buttons offer contact help. With a valid link, buttons open Square with an explicit notice that bag contents do not transfer.
