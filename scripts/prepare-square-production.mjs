@@ -24,7 +24,7 @@ for(const p of products){mapping[p.id]={};for(const heat of p.spices){
   if(!matches)continue;
   for(const variation of item.item_data.variations||[]){
    if(variation.is_deleted)continue;
-   const combined=(item.item_data.name+' '+(variation.item_variation_data?.name||'')).toLowerCase();
+   const combined=(item.item_data.name+' '+(variation.item_variation_data?.name||'')).toLowerCase().replace(/(\d+\s*oz)(?=[a-z])/g,'$1 ');
    const exactHeat=heat==='X-Hot'?/extra\s*hot|x[ -]?hot/.test(combined):heat==='Hot'?/\bhot\b/.test(combined)&&!/extra\s*hot|x[ -]?hot/.test(combined):new RegExp('\\b'+heat+'\\b','i').test(combined);
    // The existing 6 oz original item has no heat label; website currently offers Hot only.
    if(exactHeat||(p.slug==='laos-chile-paste'&&p.spices.length===1))candidates.push({item,variation});
