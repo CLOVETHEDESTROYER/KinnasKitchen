@@ -63,6 +63,21 @@ test('Durable order writes use private authenticated REST and atomic monotonic u
   assert.equal(calls[1][0],'EVAL');assert.match(String(calls[1][1]),/sourceUpdatedAt/);
  }finally{globalThis.fetch=original;process.env=saved;}
 });
+test('Vercel KV REST settings support writes without mixing credential pairs',async()=>{
+ const saved={...process.env},original=globalThis.fetch;
+ try{
+  delete process.env.UPSTASH_REDIS_REST_URL;delete process.env.UPSTASH_REDIS_REST_TOKEN;
+  process.env.KV_REST_API_URL='https://vercel-test.upstash.io';process.env.KV_REST_API_TOKEN='private-write-token';
+  process.env.KV_REST_API_READ_ONLY_TOKEN='read-only-token';
+  const {durableStoreConfigured,writeRecord}=await import('../app/lib/commerce-store');
+  assert.equal(durableStoreConfigured(),true);
+  globalThis.fetch=async(input,init)=>{assert.equal(String(input),'https://vercel-test.upstash.io/');assert.equal((init?.headers as Record<string,string>).Authorization,'Bearer private-write-token');return Response.json({result:'OK'});};
+  assert.equal(await writeRecord('integration:test',{status:'pending'},60),true);
+  process.env.UPSTASH_REDIS_REST_URL='https://other.upstash.io';assert.equal(durableStoreConfigured(),false);
+  delete process.env.UPSTASH_REDIS_REST_URL;delete process.env.KV_REST_API_TOKEN;
+  assert.equal(durableStoreConfigured(),false);
+ }finally{globalThis.fetch=original;process.env=saved;}
+});
 test('Local Sandbox does not overwrite a newer payment state with a delayed event',async()=>{
  const saved={...process.env};try{
   process.env.SQUARE_ENVIRONMENT='sandbox';delete process.env.VERCEL;delete process.env.UPSTASH_REDIS_REST_URL;delete process.env.UPSTASH_REDIS_REST_TOKEN;

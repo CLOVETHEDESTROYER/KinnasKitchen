@@ -3,10 +3,15 @@ import { createHash } from 'node:crypto';
 
 // Memory is only a convenience for local Sandbox. Hosted/live deployments require Redis.
 const local = new Map<string,{value:string;expires:number}>();
-export function durableStoreConfigured(){return !!process.env.UPSTASH_REDIS_REST_URL&&!!process.env.UPSTASH_REDIS_REST_TOKEN;}
+function storageCredentials(){
+ // Keep URL/token pairs together. Vercel's Upstash integration uses KV_* names.
+ if(process.env.UPSTASH_REDIS_REST_URL||process.env.UPSTASH_REDIS_REST_TOKEN)return {endpoint:process.env.UPSTASH_REDIS_REST_URL,token:process.env.UPSTASH_REDIS_REST_TOKEN};
+ return {endpoint:process.env.KV_REST_API_URL,token:process.env.KV_REST_API_TOKEN};
+}
+export function durableStoreConfigured(){const {endpoint,token}=storageCredentials();return !!endpoint&&!!token;}
 function namespace(key:string){return `kinnas:${process.env.SQUARE_ENVIRONMENT}:${key}`;}
 export async function redis(command:(string|number)[]):Promise<unknown>{
- const endpoint=process.env.UPSTASH_REDIS_REST_URL,token=process.env.UPSTASH_REDIS_REST_TOKEN;
+ const {endpoint,token}=storageCredentials();
  if(!endpoint||!token)throw Error('Durable order storage is not configured.');
  const url=new URL(endpoint);if(url.protocol!=='https:'||!url.hostname.endsWith('.upstash.io'))throw Error('Invalid order storage endpoint.');
  const response=await fetch(url,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(command),cache:'no-store',signal:AbortSignal.timeout(10000)});

@@ -18,7 +18,7 @@ Project: **hyper-labs-ai/kinnaskitchen**. Repository: **CLOVETHEDESTROYER/Kinnas
 
 Open this project's **Storage**, connect an **Upstash Redis** database and obtain its REST URL/token. Use a separate database for live and Sandbox. Existing account/database reuse is fine; any provider plan or terms should be selected by the owner. No paid plan has been purchased by this work.
 
-Use these exact private server environment names:
+The connected Vercel integration supplies `KV_REST_API_URL` and `KV_REST_API_TOKEN`; the application accepts these directly. Use the read/write token, never `KV_REST_API_READ_ONLY_TOKEN`. No SDK installation is needed. Alternatively, a matching pair can use these private server environment names:
 
 | Variable | Purpose |
 | --- | --- |
