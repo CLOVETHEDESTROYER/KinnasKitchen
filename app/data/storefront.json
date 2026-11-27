@@ -11,7 +11,7 @@
       "spices": [
         "Hot"
       ],
-      "short": "Deep, savory heat. Our original family recipe.",
+      "short": "Deep, savory heat from organic New Mexican red chile. Our original family recipe.",
       "intro": [
         "Our Laos Chile Paste is a bold, savory blend crafted with sun dried organic New Mexican red chile, garlic, and traditional Lao spices. It comes from a cherished family recipe. Prepared in small batches, it’s delicious as a marinade, dip, or cooking base.",
         "Bring the deep, savory flavor of Lao cooking to your favorite dishes. No preservatives or artificial ingredients, just rich, handcrafted flavor."
@@ -86,7 +86,7 @@
       ],
       "short": "Savory with a hint of mango sweetness and a chile kick.",
       "intro": [
-        "Our Vegan Mango Salsa is a tropical twist on traditional heat, with sweet, juicy mangoes blended with chiles, herbs, and spices for a bright, balanced flavor with just the right amount of kick. Made with all-natural, plant-based ingredients, it brings a little sunshine to your table.",
+        "Our Vegan Mango Salsa is a tropical twist on traditional heat, with sweet, juicy mangoes blended with chiles, herbs, and spices for a bright, balanced flavor with just the right amount of kick. Made with all-natural, plant-based ingredients.",
         "Perfect as a dip, taco topping, or side for grilled dishes, this salsa brings a refreshing burst of flavor to any meal.",
         "No preservatives. No artificial ingredients. Just fresh, bold, and vibrant taste in every bite."
       ],
@@ -119,7 +119,7 @@
         "Medium",
         "Hot"
       ],
-      "short": "All the bold flavor. Made entirely from plants.",
+      "short": "Bold, plant-based heat with organic New Mexican red chile.",
       "intro": [
         "Our Vegan Chile Paste brings bold, savory flavor without fish sauce. Crafted with sun dried organic New Mexican red chile, garlic, herbs, and spices, this plant-based version is rich in flavor and 100% vegan.",
         "Made in small batches, it’s delicious as a marinade, stir-fry base, or dipping sauce. Add deep, satisfying spice to traditional dishes or your own creations.",
@@ -146,10 +146,21 @@
     }
   ],
   "story": [
-    "Our journey began in the heart of our family kitchen, where Grandma lovingly created her signature Laos Chile Paste. Its vibrant, savory blend of spices added the perfect kick to many traditional Laos dishes. What started as a staple at family gatherings quickly became a favorite among friends, neighbors, and eventually, a wider community of food lovers who craved something truly original.",
+    "Kinna's Kitchen Chile Products was founded in 2013 with a simple but flavorful mission: to share the bold, authentic taste of traditional Laos cuisine through handcrafted chile products.",
+    "Our journey began in the heart of our family kitchen, where Grandma lovingly created her signature Laos Chile Paste, a vibrant, savory blend of spices that added the perfect kick to many traditional Laos dishes. What started as a staple at family gatherings quickly became a favorite among friends, neighbors, and eventually, a wider community of food lovers who craved something truly original.",
     "Inspired by Grandma’s passion and recipes passed down through generations, we decided to turn her beloved chile paste into the foundation of a business. With that, Kinna's Kitchen was born.",
-    "Since launching with our first product, the Laos Chile Paste, we’ve continued to grow while staying guided by our family roots and commitment to quality. Every jar we make carries the bold flavors and cultural richness of Laos, crafted with care and tradition in every batch.",
-    "At Kinna’s Kitchen, we believe food is more than just nourishment. It connects us to heritage, family, and the joy of sharing something truly special.",
+    "Since launching with our first product, the Laos Chile Paste, we’ve continued to grow, still guided by our family roots and commitment to quality. Every jar we make carries the bold flavors and cultural richness of Laos, crafted with care and tradition in every batch.",
+    "At Kinna’s Kitchen, we believe food is more than just nourishment. It’s a connection to heritage, to family, and to the joy of sharing something truly special.",
     "Welcome to our kitchen. We're glad you're here."
+  ],
+  "mission": [
+    "At Kinna’s Kitchen, we bring more than just chile products. We bring authentic taste, tradition, and quality you can trust. Each jar is crafted with care, using all-natural ingredients and small-batch methods to deliver bold, vibrant flavors inspired by genuine Laos recipes.",
+    "We provide you with versatile, handcrafted sauces and pastes that transform everyday meals into memorable culinary experiences. Whether you’re cooking family dinners, hosting friends, or exploring new flavors, our products add depth, spice, and cultural richness to your table.",
+    "With Kinna’s Kitchen, you’re not just enjoying great food. You’re connecting to a heritage of flavor, family, and love."
+  ],
+  "vision": [
+    "At Kinna’s Kitchen, our vision is to bring the authentic, vibrant flavors of traditional Laos cuisine to kitchens everywhere, celebrating heritage, quality, and community through every jar. We strive to honor our family roots by crafting chile products that are natural, wholesome, and bursting with bold flavor.",
+    "We envision a future where our products inspire home cooks and food lovers alike to explore new tastes, share cultural stories, and connect over the joy of good food. As we grow, we remain committed to sustainability, supporting local producers, and maintaining the small-batch craftsmanship that defines us.",
+    "Ultimately, we aim to be more than just a brand. We want to be a bridge that connects people to the rich culinary traditions of Laos and the warmth of family, one flavorful bite at a time."
   ]
 }

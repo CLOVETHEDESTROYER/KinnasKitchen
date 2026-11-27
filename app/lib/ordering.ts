@@ -20,3 +20,15 @@ export const squarePaymentLink = resolveSquarePaymentLink(configured);
 export const hasOnlineOrdering = squarePaymentLink !== null;
 export const orderingUrl = squarePaymentLink
   || 'mailto:kinnaskitchen@gmail.com?subject=Ordering%20from%20Kinna%E2%80%99s%20Kitchen';
+
+// Direct Buy buttons must use the checkout configured for this specific jar.
+// The general ordering link is not assumed to sell every product.
+const productBuyLinks: Record<string, string | undefined> = {
+  'laos-chile-paste': process.env.SQUARE_BUY_LINK_LAOS_CHILE_PASTE,
+  'vegan-tamarind-chile-sauce': process.env.SQUARE_BUY_LINK_TAMARIND_SAUCE,
+  'vegan-mango-salsa': process.env.SQUARE_BUY_LINK_MANGO_SALSA,
+  'vegan-chile-paste': process.env.SQUARE_BUY_LINK_VEGAN_CHILE_PASTE,
+};
+export function productBuyLink(slug: string): string | null {
+  return resolveSquarePaymentLink(productBuyLinks[slug]);
+}

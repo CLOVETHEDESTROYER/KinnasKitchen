@@ -8,6 +8,7 @@ if(env.SQUARE_ENVIRONMENT!=='production'||!env.SQUARE_ACCESS_TOKEN)throw Error('
 const headers={Authorization:`Bearer ${env.SQUARE_ACCESS_TOKEN}`,'Square-Version':'2026-11-18','Content-Type':'application/json'};
 async function get(endpoint){const response=await fetch('https://connect.squareup.com'+endpoint,{headers,signal:AbortSignal.timeout(20000)});if(!response.ok)throw Error(`Square read failed (${response.status}). Check account access.`);return response.json();}
 const {locations=[]}=await get('/v2/locations');
+const {merchant}=await get('/v2/merchants/me');
 console.log('Available location IDs:',locations.map(x=>`${x.id} (${x.status})`).join(', '));
 if(!env.SQUARE_LOCATION_ID||!locations.some(x=>x.id===env.SQUARE_LOCATION_ID&&x.status==='ACTIVE'))throw Error('Set SQUARE_LOCATION_ID to the active fulfillment location, then rerun.');
 const location=locations.find(x=>x.id===env.SQUARE_LOCATION_ID);
@@ -32,7 +33,7 @@ for(const p of products){mapping[p.id]={};for(const heat of p.spices){
  if(candidates.length===1){const {item,variation}=candidates[0];mapping[p.id][heat]=variation.id;review.push({product:p.displayName,heat,itemId:item.id,variationId:variation.id,squareName:item.item_data.name,price:variation.item_variation_data.price_money,taxIds:item.item_data.tax_ids||[],locationEligible:!variation.absent_at_location_ids?.includes(location.id)&&(variation.present_at_all_locations!==false||variation.present_at_location_ids?.includes(location.id))});}
  else review.push({product:p.displayName,heat,requiresReview:true,candidates:candidates.map(x=>({itemId:x.item.id,variationId:x.variation.id,name:x.item.item_data.name}))});
 }}
-const report={readOnly:true,locationId:location.id,merchantId:location.merchant_id,mapping,review,taxes:objects.filter(x=>x.type==='TAX').map(x=>({id:x.id,name:x.tax_data.name,percentage:x.tax_data.percentage,enabled:x.tax_data.enabled}))};
+const report={readOnly:true,locationId:location.id,merchantId:merchant.id,mapping,review,taxes:objects.filter(x=>x.type==='TAX').map(x=>({id:x.id,name:x.tax_data.name,percentage:x.tax_data.percentage,enabled:x.tax_data.enabled}))};
 fs.writeFileSync(path.join(out,'square-production-review.json'),JSON.stringify(report,null,2),{mode:0o600});
 fs.writeFileSync(path.join(out,'square-production-mapping.json'),JSON.stringify(mapping),{mode:0o600});
 console.log('Read-only report and proposed mapping saved under ignored work/.');

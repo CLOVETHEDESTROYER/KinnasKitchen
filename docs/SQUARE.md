@@ -1,3 +1,5 @@
+> Historical fixed-link notes. Current Vercel integration and setup are in [SQUARE-CHECKOUT.md](SQUARE-CHECKOUT.md) and [VERCEL-LAUNCH.md](VERCEL-LAUNCH.md).
+
 > Current integration: see [SQUARE-CHECKOUT.md](SQUARE-CHECKOUT.md). The local full-bag Sandbox checkout supersedes the static-link handoff below when configured. Historical notes follow.
 
 # Square payment-link handoff
