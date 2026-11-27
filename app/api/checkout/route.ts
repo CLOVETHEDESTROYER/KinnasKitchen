@@ -6,10 +6,11 @@ export async function POST(request:Request){
   const url=new URL(request.url);
   if(request.headers.get('origin')!==url.origin)return Response.json({error:'Please start checkout from this website.'},{status:403,headers});
   if(!squareConfig().enabled)return Response.json({error:'Checkout is unavailable. Please contact us for help.'},{status:503,headers});
-  let lines,attempt;
+  let lines,attempt,fulfillment;
   try{
     const text=await request.text();if(text.length>10000)throw Error('Your bag is too large.');
-    const body=JSON.parse(text);lines=validateBag(body.lines);attempt=body.attempt;
+    const body=JSON.parse(text);lines=validateBag(body.lines);attempt=body.attempt;fulfillment=body.fulfillment;
+    if(fulfillment!=='delivery'&&fulfillment!=='pickup')throw Error('Choose delivery or local pickup.');
     if(typeof attempt!=='string'||!/^[a-f0-9-]{36}$/.test(attempt))throw Error('Please reopen your bag and try again.');
   }catch(e){return Response.json({error:e instanceof Error?e.message:'Invalid bag.'},{status:400,headers});}
   try{
@@ -23,9 +24,10 @@ export async function POST(request:Request){
     const signature=await signReceipt(payload);
     const returnUrl=new URL('/checkout/return',url.origin);returnUrl.searchParams.set('reference',payload);returnUrl.searchParams.set('signature',signature);
     const result=await squareRequest<SquareLinkResponse>('/v2/online-checkout/payment-links',{
-      idempotency_key:attempt,description:'Kinna’s website bag',
-      order:{location_id:config.locationId,reference_id:payload,line_items:mapped,pricing_options:{auto_apply_taxes:true}},
-      checkout_options:{allow_tipping:false,ask_for_shipping_address:true,shipping_fee:{name:'Delivery',charge:{amount:999,currency:'USD'}},merchant_support_email:'kinnaskitchen@gmail.com',redirect_url:returnUrl.href}
+      idempotency_key:attempt,description:'Kinna’s website bag: '+fulfillment,
+      payment_note:fulfillment==='pickup'?'Local pickup. Arrange the time and location directly with the customer.':'Delivery order',
+      order:{location_id:config.locationId,reference_id:payload,line_items:mapped,pricing_options:{auto_apply_taxes:true},metadata:{fulfillment_choice:fulfillment},...(fulfillment==='pickup'?{fulfillments:[{type:'PICKUP',state:'PROPOSED',pickup_details:{schedule_type:'ASAP',note:'Arrange pickup time and location with the customer. Do not mark ready until confirmed.'}}]}:{})},
+      checkout_options:{allow_tipping:false,ask_for_shipping_address:fulfillment==='delivery',...(fulfillment==='delivery'?{shipping_fee:{name:'Delivery',charge:{amount:999,currency:'USD'}}}:{}),merchant_support_email:'kinnaskitchen@gmail.com',redirect_url:returnUrl.href}
     });
     const destination=new URL(result.payment_link.url);
     const allowed=config.environment==='sandbox'?['sandbox.square.link','squareupsandbox.com']:['square.link','squareup.com'];

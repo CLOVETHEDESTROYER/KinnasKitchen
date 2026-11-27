@@ -27,3 +27,10 @@
 @media(max-width:420px){.story-signature img{width:min(62%,260px)}}
 
 .checkout-summary{margin:22px 0;font-size:14px}.checkout-summary p{margin:10px 0}.checkout-summary p:first-child{display:flex;justify-content:space-between}.sandbox-note{background:#f1ebdf;padding:14px;border-left:3px solid #9e3627}.checkout-error{color:#9e3627;margin-top:14px}.button:disabled{opacity:.65;cursor:wait}
+
+/* Preserve square catalog cutouts inside the cart's narrow image column. */
+.bag-line{align-items:start}
+.bag-line>img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;align-self:start}
+.detail-photo img{height:auto;aspect-ratio:1;object-fit:contain}
+
+.fulfillment-options{border:0;margin:0 0 16px;padding:0}.fulfillment-options legend{font-size:16px;margin-bottom:12px}.fulfillment-options label{display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:14px;margin:8px 0;cursor:pointer;font-size:15px}.fulfillment-options input{width:18px;height:18px;accent-color:var(--red);flex-shrink:0}.fulfillment-options strong{margin-left:auto;white-space:nowrap}.fulfillment-options label:has(input:checked){border-color:var(--red);background:var(--paper)}

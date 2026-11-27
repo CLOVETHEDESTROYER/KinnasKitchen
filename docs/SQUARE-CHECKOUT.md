@@ -1,6 +1,6 @@
 # Integrated Square checkout
 
-The local store now supports Square Sandbox checkout for the full bag. Product pages add a selected heat level and quantity to the same bag as the homepage. The server accepts only known website product/heat choices and integer quantities from 1 to 99, maps them to Square catalog variations, and uses Square's prices and attached taxes. It adds one $9.99 Delivery fee per order and asks Square to collect the shipping address.
+The local store now supports Square Sandbox checkout for the full bag. Product pages add a selected heat level and quantity to the same bag as the homepage. The server accepts only known website product/heat choices and integer quantities from 1 to 99, maps them to Square catalog variations, and uses Square's prices and attached taxes. Customers must explicitly select $9.99 delivery or free local pickup before checkout; neither is selected by default. Delivery adds the fee and asks Square to collect the shipping address. Pickup omits both and creates a proposed PICKUP fulfillment with a note to arrange the time and location directly. Square internally uses ASAP scheduling for the proposed pickup; the website does not promise immediate readiness. Owners must confirm readiness and pickup arrangements.
 
 The selected Sandbox catalog has 7.625% additive Sales Tax on all four products and nine heat variations. Delivery is not taxed in this test setup. Square stock counts are not used as a website purchase limit, per the user's replenishment policy; stock counts and live inventory have not been modified. Archived/unavailable catalog variations and invalid mappings must still be resolved rather than creating arbitrary line items.
 
@@ -18,7 +18,7 @@ Without complete configuration the API refuses checkout and the storefront offer
 
 ## Requests and payment verification
 
-`POST /api/checkout` validates same-origin requests and bag data, checks mapped catalog variations, and calls Square CreatePaymentLink using the bag's stable attempt UUID as an idempotency key. Browser prices are ignored. Retry an unchanged bag with the same attempt ID; Square rejects changes to a reused key. A changed bag gets a new attempt ID. The returned destination is checked against Square's environment-specific HTTPS hosts. The bag is retained while checkout opens or fails.
+`POST /api/checkout` validates same-origin requests and bag data, checks mapped catalog variations, and calls Square CreatePaymentLink using the bag's stable attempt UUID as an idempotency key. Browser prices are ignored. Retry an unchanged bag with the same attempt ID; Square rejects changes to a reused key. A changed bag or fulfillment selection gets a new attempt ID. The returned destination is checked against Square's environment-specific HTTPS hosts. The bag is retained while checkout opens or fails.
 
 `/checkout/return` does not trust redirect parameters as proof of payment. A short reference signed on the server identifies the checkout. `GET /api/checkout/status` verifies its HMAC and seven-day lifetime, finds the matching Square order at the configured location, and checks completed payments against the order total. It returns only payment status, never customer details. The page briefly retries pending status. The bag is cleared only after verified payment and only if its contents still match the saved checkout snapshot.
 
@@ -33,3 +33,7 @@ Additional checks passed: same-bag retries reused the same payment link; invalid
 ## Production handoff
 
 Live checkout remains disabled. Before launch: map the real catalog/heat IDs and account location; confirm the $9.99 eligible destinations/quantity policy, dispatch times, tax rate/sourcing and delivery tax treatment; verify order routing, notifications, stock deduction, refunds and fulfillment. The approved flat test tax setup is not a universal destination tax determination. Verify the zero-stock ordering policy on actual production catalog settings. Add hosting request limits and durable payment/webhook reconciliation. Credentials must stay in the client's account and host secret store.
+
+## Pickup option and cart image correction
+
+Free local pickup was approved by the user. The checkout request now requires `fulfillment` to be `pickup` or `delivery`; missing and invalid selections return 400. Both paths were verified against the resulting Square orders: a $12 original paste has $0.92 tax and no fee for pickup ($12.92, PICKUP fulfillment), or a $9.99 fee for delivery ($22.91, SHIPMENT fulfillment). The cart prevents checkout until an option is selected and shows instructions to contact the owners after ordering to arrange pickup. Desktop/mobile cart thumbnails keep a square frame with `object-fit: contain` and automatic height rather than stretching to their intrinsic HTML height.

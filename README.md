@@ -2,7 +2,7 @@
 
 HyperLabs website concept for Kinna’s Kitchen, with a warm handcrafted design inspired by the family’s Lao recipes and New Mexico roots. The source includes original catalog photography, product copy and recipes, plus the selected direction for the generated hero scene.
 
-**Status: Square Sandbox checkout connected locally.** The bag supports mixed products, heat options and quantities. Square supplies checkout prices and taxes, adds $9.99 delivery, and collects the shipping address. A successful Sandbox payment has been verified through the website return page. Live payments are disabled pending production credentials, real catalog mapping, fulfillment and tax review. See [the checkout setup](docs/SQUARE-CHECKOUT.md).
+**Status: Square Sandbox checkout connected locally.** The bag supports mixed products, heat options and quantities. Square supplies checkout prices and taxes, adds $9.99 delivery when chosen, and offers free local pickup arranged after ordering. A successful Sandbox payment has been verified through the website return page. Live payments are disabled pending production credentials, real catalog mapping, fulfillment and tax review. See [the checkout setup](docs/SQUARE-CHECKOUT.md).
 
 ## Run locally
 
