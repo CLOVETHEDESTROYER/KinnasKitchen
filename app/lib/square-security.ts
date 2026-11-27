@@ -19,5 +19,15 @@ export function checkoutOrigin(request:Request){
   const url=new URL(configured);if(url.protocol!=='https:'||supplied!==url.origin)return null;
   return url.origin;
  }
- return supplied===actual?actual:null;
+ if(supplied===actual)return actual;
+ // Next's local server normalizes request URLs to localhost even when the
+ // browser uses 127.0.0.1. Allow that alias only for local Sandbox testing.
+ if(process.env.SQUARE_ENVIRONMENT==='sandbox'&&!process.env.VERCEL&&supplied){
+  try{
+   const source=new URL(supplied),target=new URL(actual);
+   const loopback=(host:string)=>host==='localhost'||host==='127.0.0.1';
+   if(source.protocol==='http:'&&target.protocol==='http:'&&loopback(source.hostname)&&loopback(target.hostname)&&source.port===target.port)return source.origin;
+  }catch{}
+ }
+ return null;
 }

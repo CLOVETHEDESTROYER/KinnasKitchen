@@ -25,6 +25,16 @@ test('Production checkout trusts the configured origin rather than a forged Host
  }finally{process.env=saved;}
 });
 
+test('Local Sandbox accepts Next localhost aliases without accepting remote origins',()=>{
+ const saved={...process.env};try{
+  process.env.SQUARE_ENVIRONMENT='sandbox';delete process.env.VERCEL;
+  const request=(origin:string)=>new Request('http://localhost:5173/api/checkout',{headers:{origin}});
+  assert.equal(checkoutOrigin(request('http://127.0.0.1:5173')),'http://127.0.0.1:5173');
+  assert.equal(checkoutOrigin(request('http://127.0.0.1:5174')),null);
+  assert.equal(checkoutOrigin(request('http://other.example:5173')),null);
+  process.env.VERCEL='1';assert.equal(checkoutOrigin(request('http://127.0.0.1:5173')),null);
+ }finally{process.env=saved;}
+});
 test('Bag validation merges duplicates and rejects invalid heat/quantity',async()=>{
  const {validateBag}=await import('../app/lib/square');const {products}=await import('../app/lib/products');const p=products[0];
  assert.deepEqual(validateBag([{id:p.id,spice:'Hot',quantity:1},{id:p.id,spice:'Hot',quantity:2}]),[{id:p.id,spice:'Hot',quantity:3}]);
