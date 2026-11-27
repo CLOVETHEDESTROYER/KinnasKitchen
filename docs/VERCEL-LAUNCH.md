@@ -1,6 +1,19 @@
 # Vercel launch handoff
 
-Project: **hyper-labs-ai/kinnaskitchen**. Repository: **CLOVETHEDESTROYER/KinnasKitchen**. Current staging alias: **https://kinnaskitchen.vercel.app**. Final domain: **https://kinnaskitchen.com**, after verification. This preparation branch must be previewed before merging into `main`, which Vercel uses for its Production deployment.
+Project: **hyper-labs-ai/kinnaskitchen**. Repository: **CLOVETHEDESTROYER/KinnasKitchen**. Current staging alias: **https://kinnaskitchen.vercel.app**. Final domain: **https://kinnaskitchen.com**, after verification. `main` now contains the reviewed preparation branch and Vercel serves the live domain.
+
+## Launch status: November 27, 2026
+
+- Owner updated Wix DNS. Both authoritative nameservers, Cloudflare DNS and Google DNS return the required A/CNAME records. Vercel reports valid configuration for the apex and www domains.
+- HTTPS is valid on the new server. `www.kinnaskitchen.com` permanently redirects to `kinnaskitchen.com`, preserving paths and query strings. Some local/browser DNS caches still return Wix during propagation; one in-app browser encountered a mixed-cache redirect loop. Do not change the correct DNS records to address stale caches.
+- `SITE_URL=https://kinnaskitchen.com`, `SITE_INDEXABLE=true`, `SQUARE_LIVE_ENABLED=true` are applied to Production. Live checkout activation was explicitly authorized; the owner deferred the real purchase/refund test.
+- Verified homepage, shop, product, recipes, find-us, robots and sitemap responses; canonical and sitemap use the final domain, and all four legacy Wix product URLs return permanent redirects.
+- Verified real API-generated pickup and delivery handoffs from the final domain, $12.92/$22.91 totals for a $12 jar, final-domain payment return URLs and signed pending receipt lookup. Temporary unpaid links were removed; no payment or refund was taken.
+- Durable storage and duplicate-event handling were verified against the connected free Upstash database. The signed production notification endpoint was rechecked after cutover using a setup event referencing existing Square payment data. A real Square-initiated purchase/refund notification remains part of the deferred owner test.
+- The enabled Square notification subscription intentionally retains the verified stable URL `https://kinnaskitchen.vercel.app/api/square/webhook`; it does not need to move to the customer-facing domain. Preserve the matching exact URL/signature configuration.
+- The private import file's product mapping format was corrected to unquoted JSON. Never JSON-stringify the already serialized mapping again in an env file; that escaped format fails JSON parsing after import.
+
+The sections below retain configuration instructions and operating checks for future maintenance. The current status above supersedes older preparation-only statements.
 
 ## What is prepared
 
@@ -12,7 +25,7 @@ Project: **hyper-labs-ai/kinnaskitchen**. Repository: **CLOVETHEDESTROYER/Kinnas
 - Current Square prices read by the homepage/shop/product pages; static approved price fallback if a display read fails. Checkout remains authoritative. Existing `/product-page/...` redirects and `/about`/`/contact` redirects are prepared.
 - Previews remain noindex. API and payment return pages are excluded from robots. No marketing or purchase analytics has been enabled automatically.
 
-## Account setup still required
+## Configuration reference
 
 ### 1. Connect order storage in Vercel
 

@@ -4,9 +4,9 @@ HyperLabs website for Kinna’s handcrafted Lao chile pastes, sauces and mango s
 
 **Hosting: Vercel / Next.js 16 / Node 24.** The earlier Vinext/Cloudflare/Sites starter is retired. Vercel project: `hyper-labs-ai/kinnaskitchen`, current staging domain `kinnaskitchen.vercel.app`. The final domain moves to `kinnaskitchen.com` after launch verification.
 
-**Payments: Square Sandbox works locally; live payments remain gated.** The bag supports mixed jars, heat choices and quantities. Customers explicitly choose free local pickup arranged after ordering or $9.99 delivery. Square supplies checkout prices and configured item tax; pickup has no delivery fee. Stock counts remain tracked without being used as a website purchasing limit.
+**Payments: live Square checkout is enabled at https://kinnaskitchen.com.** The owner deferred the real purchase/refund test. The bag supports mixed jars, heat choices and quantities. Customers explicitly choose free local pickup arranged after ordering or $9.99 delivery. Square supplies checkout prices and configured item tax; pickup has no delivery fee. Stock counts remain tracked without being used as a website purchasing limit.
 
-The production preparation adds private server credentials, durable checkout references/rate limits through Upstash Redis, signed Square payment/refund webhooks, direct signed-receipt status lookup, automatic display-price refresh and safe preview indexing. The webhook/storage paths have automated tests, but live account mapping, hosted Redis and the real webhook subscription still need account setup and end-to-end verification.
+The production preparation adds private server credentials, durable checkout references/rate limits through Upstash Redis, signed Square payment/refund webhooks, direct signed-receipt status lookup, automatic display-price refresh and safe preview indexing. The webhook/storage paths have automated tests, and live catalog mapping, hosted Redis, signed notifications and unpaid production checkout handoffs have been verified. The owner still needs to complete the deferred real purchase/refund test.
 
 ## Develop locally
 

@@ -14,6 +14,12 @@ This project targets **Vercel with standard Next.js 16 and Node 24**. Read `READ
 - Credentials belong only in ignored local files and Vercel’s private environment variables. Never print tokens, use browser-exposed prefixes or commit runtime files. `work/production-square.env` is the ignored manual handoff file; it is not automatically loaded by Next.js.
 - Preserve SEO research in `../internal/Kinnas_Kitchen_SEO_Research_2026-11-18.md`; advertiser competition is not organic difficulty. Keep staging noindex until domain/redirect readiness. The final domain will be `kinnaskitchen.com`; the current Vercel project is `hyper-labs-ai/kinnaskitchen`.
 
+## Current launch status
+
+- On November 27, 2026 the user explicitly authorized enabling live checkout and deferred the real purchase/refund test. Live checkout and final-domain return URLs are verified at `https://kinnaskitchen.com`; do not describe this as Sandbox-only.
+- Both domains are attached to Vercel, www redirects permanently to the apex, and authoritative DNS is correct. Some DNS/browser caches may temporarily show Wix. `SITE_INDEXABLE=true` is configured for Production.
+- Square notifications retain their verified Vercel alias URL; the exact signature URL must remain synchronized. See the dated status in `docs/VERCEL-LAUNCH.md`.
+
 ## Development and deployment
 
 - `npm ci`, `npm run dev` (port 5173), `npm test`, `npm run typecheck`, `npm run build`, `npm start`.
