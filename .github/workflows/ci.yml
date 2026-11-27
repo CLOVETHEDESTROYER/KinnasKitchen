@@ -28,6 +28,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - name: Install locked dependencies
-        run: npm run install:ci
+        run: npm ci
+      - name: Test checkout logic
+        run: npm test
       - name: Build website
         run: npm run build

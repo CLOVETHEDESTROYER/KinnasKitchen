@@ -1,6 +1,5 @@
-import { env as workerEnvironment } from 'cloudflare:workers';
-// Server-only Worker bindings. Never import this module into browser code.
+import 'server-only';
+// Vercel and Next.js load private environment variables on the server.
 export function squareSetting(name: string): string {
-  const value = (workerEnvironment as unknown as Record<string, unknown>)[name] ?? process.env[name];
-  return typeof value === 'string' ? value : '';
+  return process.env[name] || '';
 }

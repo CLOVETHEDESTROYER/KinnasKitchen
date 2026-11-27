@@ -48,3 +48,6 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+
+# Vercel project linkage and local secrets
+/.vercel/
